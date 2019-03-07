@@ -6,8 +6,23 @@ ydiff = aty - obj_player.y
 len = sqrt(sqr(xdiff) + sqr(ydiff))
 if(len > rope and snag == 0) //If Rope Snags
 {
-	snag = 1
-	momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
+	var px = obj_player.x
+	var py = obj_player.y
+	if(px < atx and py > aty)
+	{	
+		snag = 1;
+		momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
+	}
+	else if(px >= atx and py > aty)
+	{
+		snag = 1;
+		momentum = obj_player.phy_speed_x;
+	}
+	else
+	{
+		snag = 0;
+		instance_destroy();
+	}
 }
 if(snag == 1) //Circular Motion
 {
@@ -29,8 +44,6 @@ if(snag == 1) //Circular Motion
 	}
 	else
 	{
-		obj_player.jumpBool = true
-		obj_player.boostBool = true
 		instance_destroy();
 	}
 }

@@ -2,7 +2,5 @@
 // You can write your code in this editor
 //physics_world_gravity(0,25)
 swingPress = vk_space
-restart = vk_backspace
-frameCount = 0
-jumpBool = true
-boostBool = true
+jumpPress = ord("Z")
+restartKey = vk_backspace
