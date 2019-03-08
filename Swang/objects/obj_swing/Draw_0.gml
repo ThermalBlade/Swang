@@ -18,8 +18,7 @@ if(keyboard_check(swingPress)) //While Holding Space, Draw Line
 }
 else
 {
-	obj_player.jumpBool = true
-	obj_player.boostBool = true
+	obj_player.canJump = true;
 	instance_destroy();
 }
 x = atx

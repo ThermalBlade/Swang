@@ -20,7 +20,7 @@ if(len > rope and snag == 0) //If Rope Snags
 	}
 	else
 	{
-		snag = 0;
+		obj_player.canJump = true;
 		instance_destroy();
 	}
 }
@@ -44,6 +44,7 @@ if(snag == 1) //Circular Motion
 	}
 	else
 	{
+		obj_player.canJump = true;
 		instance_destroy();
 	}
 }

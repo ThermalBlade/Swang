@@ -9,6 +9,69 @@ if(keyboard_check_pressed(swingPress)) //Create Web
 	}
 }
 
+show_debug_message(canJump)
+if(!instance_exists(obj_swing) and canJump)
+{
+	if(!jumping)
+	{
+		if(keyboard_check(jumpPress))
+		{
+			frameCount += 1
+			if(frameCount >= 8 and frameCount < boostLength + 8)
+			{
+				var momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
+				phy_speed_y = 0
+				phy_speed_x = boostSpeed
+				canJump = false;
+				jumping = false;
+			}
+		}
+		else if(frameCount > 0)
+		{
+			jumping = true;
+			frameCount = 0;
+		}
+		else
+		{
+			frameCount = 0
+		}
+	}
+	else if(canJump)
+	{
+		if(frameCount == 0)
+		{
+			if(phy_speed_y > 0)
+			{
+				phy_speed_y = -10;
+			}
+			else
+			{
+				phy_speed_y -= 10;
+			}
+		}
+		frameCount += 1
+		if(keyboard_check(jumpPress))
+		{
+			phy_speed_x = 0;
+			phy_speed_y = -5;
+			canJump = false;
+			jumping = false;
+			frameCount = 0;
+		}
+		else if(frameCount >= 8)
+		{
+			canJump = false;
+			jumping = false;
+			frameCount = 0;
+		}
+	}
+}
+else
+{
+	canJump = false;
+	jumping = false;
+	frameCount = 0
+}
 
 if(!instance_exists(obj_swing)) //Fall and adjust camera
 {
