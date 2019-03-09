@@ -21,6 +21,7 @@ if(len > rope and snag == 0) //If Rope Snags
 	else
 	{
 		obj_player.canJump = true;
+		obj_player.canBoost = true;
 		instance_destroy();
 	}
 }
@@ -32,7 +33,7 @@ if(snag == 1) //Circular Motion
 		negSin = sin(angle * (pi / 180))
 		obj_player.phy_speed_y = momentum * negCos
 		obj_player.phy_speed_x = momentum * negSin
-		momentum += negSin * 0.2
+		momentum += negSin * 0.1
 	}
 	else if(obj_player.y > aty and momentum > 0)
 	{
@@ -40,15 +41,16 @@ if(snag == 1) //Circular Motion
 		negSin = sin(angle * (pi / 180))
 		obj_player.phy_speed_y = momentum * negCos
 		obj_player.phy_speed_x = momentum * negSin
-		momentum -= negSin * 0.2
+		momentum -= negSin * 0.1
 	}
 	else
 	{
 		obj_player.canJump = true;
+		obj_player.canBoost = true;
 		instance_destroy();
 	}
 }
 else
 {
-	obj_player.phy_speed_y += 0.2
+	obj_player.phy_speed_y += 0.1
 }

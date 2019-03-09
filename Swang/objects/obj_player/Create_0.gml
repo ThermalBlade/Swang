@@ -7,6 +7,12 @@ restartKey = vk_backspace
 frameCount = 0
 jumping = false
 canJump = true;
+canBoost = true;
+momentumSet = true;
+doubleJumped = false;
+curMomentum = 0;
 
-boostLength = 45;
-boostSpeed = 12;
+boostLength = 60;
+boostSpeed = 5;
+jumpSpeed = 4;
+doubleJumpSpeed = 3;

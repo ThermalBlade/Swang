@@ -19,6 +19,7 @@ if(keyboard_check(swingPress)) //While Holding Space, Draw Line
 else
 {
 	obj_player.canJump = true;
+	obj_player.canBoost = true;
 	instance_destroy();
 }
 x = atx
