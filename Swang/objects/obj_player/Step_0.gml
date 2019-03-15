@@ -9,81 +9,88 @@ if(keyboard_check_pressed(swingPress)) //Create Web
 	}
 }
 
-if(!instance_exists(obj_swing))
+if(!instance_exists(obj_swing) and keyboard_check(jumpPress) and frameCount < framesToBoost and !firstPress and !forceWait) //Jumping and Boosting
 {
-	show_debug_message(frameCount)
-	if(!jumping)
+	frameCount += 1;
+}
+else if(!instance_exists(obj_swing) and frameCount > 0)
+{
+	if(!firstPress)
 	{
-		if(keyboard_check(jumpPress))
+		firstPress = true;
+		momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
+	}
+	if(frameCount >= framesToBoost and frameCount < boostTime and keyboard_check(jumpPress) and canBoost)
+	{
+		if(momentum > boostSpeed)
 		{
-			frameCount += 1;
-			if(frameCount >= 8 and frameCount < boostLength + 8 and canBoost) //Boosting
-			{
-				if(momentumSet)
-				{
-					curMomentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y));
-					momentumSet = false;
-				}
-				phy_speed_y = 0;
-				phy_speed_x = curMomentum;
-				jumping = false;
-			}
-		}
-		else if(frameCount > 0 and frameCount < 8)
-		{
-			jumping = true;
-			frameCount = 0;
-		}
-		else if(frameCount >= 8)
-		{
-			momentumSet = true;
-			canBoost = false;
-			frameCount = 0;
+			phy_speed_x = momentum;
 		}
 		else
 		{
-			frameCount = 0
+			phy_speed_x = boostSpeed
+		}
+		phy_speed_y = 0;
+		frameCount += 1;
+	}
+	else if(frameCount >= framesToBoost)
+	{
+		frameCount = 0;
+		firstPress = false;
+		canBoost = false;
+		if(keyboard_check(jumpPress))
+		{
+			forceWait = true;
 		}
 	}
-	else if(canJump)
+	else if(jumpFrameCount < framesToDoubleJump)
 	{
-		if(frameCount == 0)
+		if(!jumped and canJump)
 		{
-			if(phy_speed_y > 0)
-			{
-				phy_speed_y = -jumpSpeed;
-			}
-			else
+			if(phy_speed_y < 0)
 			{
 				phy_speed_y -= jumpSpeed;
 			}
+			else
+			{
+				phy_speed_y = -jumpSpeed;
+			}
+			jumped = true;
+			canJump = false;
 		}
-		frameCount += 1
-		if(keyboard_check(jumpPress) and !doubleJumped)
+		jumpFrameCount += 1;
+		if(keyboard_check(jumpPress) and canDoubleJump)
 		{
 			phy_speed_x = 0;
 			phy_speed_y = -doubleJumpSpeed;
-			doubleJumped = true;
+			canDoubleJump = false;
+			if(jumped)
+			{
+				canJump = true;
+			}
 		}
-		else if(frameCount >= 8)
+	}
+	else
+	{
+		jumped = false;
+		firstPress = false;
+		frameCount = 0;
+		jumpFrameCount = 0;
+		if(keyboard_check(jumpPress))
 		{
-			canJump = false;
-			jumping = false;
-			doubleJumped = false;
-			frameCount = 0;
+			forceWait = true;
 		}
 	}
 }
-else
+
+if(forceWait = true and !keyboard_check(jumpPress)) //Force new click for jump/boost
 {
-	canJump = false;
-	jumping = false;
-	frameCount = 0
+	forceWait = false;
 }
 
 if(!instance_exists(obj_swing)) //Fall and adjust camera
 {
-	phy_speed_y += 0.1;
+	phy_speed_y += fallSpeed;
 }
 
 if(keyboard_check_pressed(restartKey)) //Temporary Restart - Press Backspace

@@ -15,13 +15,11 @@ if(keyboard_check(swingPress)) //While Holding Space, Draw Line
 		it += 1
 		draw_self();
 	}
+	draw_sprite(spr_target, 0, x, y)
 }
 else
 {
-	obj_player.canJump = true;
-	obj_player.canBoost = true;
 	instance_destroy();
 }
 x = atx
 y = aty
-draw_sprite(spr_target, 0, x, y)

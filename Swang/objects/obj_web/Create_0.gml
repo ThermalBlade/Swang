@@ -4,4 +4,4 @@ extendSpeed = 2 //How Fast The Line Extends
 length = extendSpeed
 minimumLine = 20
 pixelsInLine = 60
-swingPress = vk_space
+swingPress = obj_player.swingPress

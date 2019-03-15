@@ -4,15 +4,23 @@
 swingPress = vk_space
 jumpPress = ord("Z")
 restartKey = vk_backspace
-frameCount = 0
-jumping = false
-canJump = true;
-canBoost = true;
-momentumSet = true;
+momentum = 0;
+frameCount = 0;
+jumpFrameCount = 0;
+firstPress = false;
+jumped = false;
 doubleJumped = false;
-curMomentum = 0;
+canBoost = true;
+canJump = true;
+canDoubleJump = true;
+forceWait = false;
 
-boostLength = 60;
+fallSpeed = 0.08;
 boostSpeed = 5;
-jumpSpeed = 4;
-doubleJumpSpeed = 3;
+jumpSpeed = 5;
+doubleJumpSpeed= 4;
+
+framesToBoost = 8;
+framesToDoubleJump = 10;
+boostTime = 60;
+
