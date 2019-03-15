@@ -22,7 +22,7 @@ if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space 
 }
 else //Create Swing Object
 {
-	if(place_meeting(x, y, obj_skyscraper))
+	if(place_meeting(x, y, obj_skyscraper) or place_meeting(x, y, obj_heli))
 	{
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = obj_player.x + length;

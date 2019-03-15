@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "2e92773a-43a3-4643-9659-9ef43cf340a4",
+            "Value": {
+                "id": "aee2a46c-5345-4a4a-8d7e-d1c5353194c1",
+                "resourcePath": "objects\\obj_wall\\obj_wall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2edbc50e-1487-4163-96b5-7236d2ba5cca",
             "Value": {
                 "id": "8b3c6260-a94d-494f-bb7b-53fce20069f4",
@@ -116,6 +124,14 @@
                 "id": "8d7c3a94-7da3-4fa7-aaeb-f07bb91b11f6",
                 "resourcePath": "options\/ps4\/options_ps4.yy",
                 "resourceType": "GMPS4Options"
+            }
+        },
+        {
+            "Key": "41e138c5-bb9d-446f-8a31-317c04625ad8",
+            "Value": {
+                "id": "5e622fb9-bc71-4d66-9f21-d97b269d0372",
+                "resourcePath": "sprites\\spr_heli\\spr_heli.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -180,6 +196,14 @@
                 "id": "eff7440c-8a3b-4dff-a76f-26f1b674d5fe",
                 "resourcePath": "options\/windowsuap\/options_windowsuap.yy",
                 "resourceType": "GMWindowsUAPOptions"
+            }
+        },
+        {
+            "Key": "81df8504-399e-45a2-82a6-c5dc3cd33d7c",
+            "Value": {
+                "id": "a98f5e93-3501-440a-8989-856eb8f6bfa8",
+                "resourcePath": "sprites\\spr_wall\\spr_wall.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -268,6 +292,14 @@
                 "id": "e23f4484-b36b-4ea4-ae8a-0dd99551af75",
                 "resourcePath": "sprites\\spr_target\\spr_target.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c7827cfe-d7b1-4723-ab4a-9bee43162997",
+            "Value": {
+                "id": "ecea4a6f-0e08-4013-a7a9-2da900c889ac",
+                "resourcePath": "objects\\obj_heli\\obj_heli.yy",
+                "resourceType": "GMObject"
             }
         },
         {
