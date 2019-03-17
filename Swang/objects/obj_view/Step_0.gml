@@ -1,5 +1,23 @@
 /// @description Insert description here
 // You can write your code in this editor
+trWidth = startingCamWidth + obj_player.phy_speed_x * magnitudeOfChange
+if(camWidth < (trWidth - growOutRate))
+{
+	camWidth += growOutRate;
+}
+else if(camWidth > (trWidth + growInRate))
+{
+	camWidth -= growInRate;
+}
+
+camera_set_view_size(view_camera[0], camWidth, camWidth * (9/16));
+
+playerXOffset = camWidth - plDistanceFromEdgeofScreen;
+maxWebCutoff = floor(camWidth / maxCutoffDem);
+shortWebCutoff = floor(camWidth / shortCutoffDem);
+maxFallCutoff = floor(camWidth / maxCutoffDem);
+shortFallCutoff = floor(camWidth / shortCutoffDem);
+
 x = obj_player.x + playerXOffset;
 y = obj_player.phy_position_y - playerYOffset + yOffset
 
@@ -41,4 +59,3 @@ else if(yOffset < 0 and !instance_exists(obj_web))
 	}
 	yOffset += 2;
 }
-show_debug_message(yOffset)

@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editory
-yOffset = 0
+magnitudeOfChange = 30;
+startingCamWidth = 420;
+plDistanceFromEdgeofScreen = 14;
+playerYOffset = 0;
+maxCutoffDem = 7;
+shortCutoffDem = 9;
+growOutRate = 3;
+growInRate = 2;
 
-playerXOffset = 550;
-playerYOffset = 10;
-
-maxWebCutoff = 50;
-shortWebCutoff = 40;
-maxFallCutoff = 60;
-shortFallCutoff = 45;
+yOffset = 0;
+camWidth = startingCamWidth;
