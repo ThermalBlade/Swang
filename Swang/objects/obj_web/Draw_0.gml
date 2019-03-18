@@ -1,34 +1,88 @@
 /// @description Draw Line Until Space Held
 // You can write your code in this editor
-if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
+if(place_meeting(atx, aty, obj_hookable))
 {
-	x = obj_player.x
-	y = obj_player.y
-	atx = x + length
-	aty = y - length
-	som  = pixelsInLine
-	it = 0
-	xdiff = x - atx
-	ydiff = y - aty
-	while(it <= som)
+	if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
 	{
-		x -= xdiff / som
-		y -= ydiff / som
-		it += 1
-		draw_self();
+		x = obj_player.x
+		y = obj_player.y
+		atx = x + length
+		aty = y - length
+		som  = pixelsInLine
+		it = 0
+		xdiff = x - atx
+		ydiff = y - aty
+		while(it <= som)
+		{
+			x -= xdiff / som
+			y -= ydiff / som
+			it += 1
+			draw_self();
+		}
+		draw_sprite(spr_target, 0, x, y)
+		length += extendSpeed
 	}
-	draw_sprite(spr_target, 0, x, y)
-	length += extendSpeed
+	else //Create Swing Object
+	{
+		if(place_meeting(x, y, obj_hookable))
+		{
+			instance_create_depth(0, 0, 0, obj_swing);
+			obj_swing.atx = obj_player.x + length;
+			obj_swing.aty = obj_player.y - length;
+			rope = sqrt(2 * sqr(length))
+			obj_swing.rope = rope
+		}
+		instance_destroy();
+	}
 }
-else //Create Swing Object
+else
 {
-	if(place_meeting(x, y, obj_skyscraper) or place_meeting(x, y, obj_heli))
+	if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
 	{
-		instance_create_depth(0, 0, 0, obj_swing);
-		obj_swing.atx = obj_player.x + length;
-		obj_swing.aty = obj_player.y - length;
-		rope = sqrt(2 * sqr(length))
-		obj_swing.rope = rope
+		x = obj_player.x
+		y = obj_player.y
+		som  = 60
+		it = 0
+		inst = instance_nearest(x, y, obj_hookable);
+		aatx = inst.x
+		aaty = inst.y
+		xdiff = x - aatx
+		ydiff = y - aaty
+		while(it <= som)
+		{
+			x -= xdiff / som
+			y -= ydiff / som
+			it += 1
+			draw_self();
+		}
+		draw_sprite(spr_target, 0, x, y)
+		
+		x = obj_player.x
+		y = obj_player.y
+		atx = x + length
+		aty = y - length
+		som  = pixelsInLine
+		it = 0
+		xdiff = x - atx
+		ydiff = y - aty
+		while(it <= som)
+		{
+			x -= xdiff / som
+			y -= ydiff / som
+			it += 1
+		}
+		length += extendSpeed
 	}
-	instance_destroy();
+	else //Create Swing Object
+	{
+		if(place_meeting(x, y, obj_hookable))
+		{
+			instance_create_depth(0, 0, 0, obj_swing);
+			obj_swing.atx = obj_player.x + length;
+			obj_swing.aty = obj_player.y - length;
+			rope = sqrt(2 * sqr(length))
+			obj_swing.rope = rope
+		}
+		instance_destroy();
+	}
 }

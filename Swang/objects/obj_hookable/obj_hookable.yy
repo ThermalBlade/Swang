@@ -2,7 +2,7 @@
     "id": "04f0aa4c-0f7c-4cf6-9b72-370925934cc2",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_skyscraper",
+    "name": "obj_hookable",
     "eventList": [
         {
             "id": "4449f6e0-0360-4391-a5ce-2ed975626f54",
