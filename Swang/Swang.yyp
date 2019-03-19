@@ -66,7 +66,7 @@
             "Key": "17aaa072-8372-4f4b-8645-c38bab8700df",
             "Value": {
                 "id": "75914201-bbe2-4092-91d2-1bc5c88acaab",
-                "resourcePath": "sprites\/spr_skyscraper1\/spr_skyscraper1.yy",
+                "resourcePath": "sprites\\spr_hookable\\spr_hookable.yy",
                 "resourceType": "GMSprite"
             }
         },

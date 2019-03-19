@@ -2,7 +2,7 @@
     "id": "17aaa072-8372-4f4b-8645-c38bab8700df",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_skyscraper1",
+    "name": "spr_hookable",
     "For3D": false,
     "HTile": false,
     "VTile": false,
