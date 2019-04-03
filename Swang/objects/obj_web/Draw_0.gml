@@ -2,6 +2,7 @@
 // You can write your code in this editor
 px = obj_player.x
 py = obj_player.y
+rope = sqrt(2 * sqr(length))
 if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
 {
 	x = obj_player.x
@@ -15,15 +16,23 @@ if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space 
 		inst = instance_nearest(atx, aty, obj_hookable);
 		aatx = inst.x
 		aaty = inst.y
-		var xMin = aatx;
-		var xMax = inst.image_xscale * sprite_get_width(spr_hookable) + aatx;
-		var yMax = inst.image_yscale * sprite_get_height(spr_hookable) + aaty;
-		var yMin = aaty;
+		var xMin = inst.x;
+		var xMax = aatx + (inst.image_xscale * sprite_get_width(spr_hookable));
+		var yMmin = aaty - (inst.image_yscale * sprite_get_height(spr_hookable) / 2);
+		var yMax = aaty + (inst.image_yscale * sprite_get_height(spr_hookable) / 2);
 		newX = atx;
 		newY = aty;
-		if(atx < xMin and xMin - atx < 50 and aty < yMax and aty > yMin)
+		minLenToObj = 0
+		if(py < yMax and px < xMin)
 		{
+			minLenToObj = point_distance(obj_player.x, obj_player.y, xMin, obj_player.y);
 			newX = xMin;
+			newY = py;
+		}
+		if(minLenToObj >= rope)
+		{
+			show_debug_message(minLenToObj)
+			newX = atx;
 			newY = aty;
 		}
 		xdiff = x - newX
@@ -60,7 +69,6 @@ else //Create Swing Object
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = x;
 		obj_swing.aty = y;
-		rope = sqrt(2 * sqr(length))
 		obj_swing.rope = rope
 	}
 	instance_destroy();
