@@ -3,6 +3,7 @@
 px = obj_player.x
 py = obj_player.y
 rope = sqrt(2 * sqr(length))
+inst = instance_nearest(atx, aty, obj_hookTracker);
 if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
 {
 	x = obj_player.x
@@ -13,30 +14,9 @@ if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space 
 	it = 0
 	if(!place_meeting(atx, aty, obj_hookable))
 	{
-		inst = instance_nearest(atx, aty, obj_hookable);
-		aatx = inst.x
-		aaty = inst.y
-		var xMin = inst.x;
-		var xMax = aatx + (inst.image_xscale * sprite_get_width(spr_hookable));
-		var yMmin = aaty - (inst.image_yscale * sprite_get_height(spr_hookable) / 2);
-		var yMax = aaty + (inst.image_yscale * sprite_get_height(spr_hookable) / 2);
-		newX = atx;
-		newY = aty;
-		minLenToObj = 0
-		if(py < yMax and px < xMin)
-		{
-			minLenToObj = point_distance(obj_player.x, obj_player.y, xMin, obj_player.y);
-			newX = xMin;
-			newY = py;
-		}
-		if(minLenToObj >= rope)
-		{
-			show_debug_message(minLenToObj)
-			newX = atx;
-			newY = aty;
-		}
-		xdiff = x - newX
-		ydiff = y - newY
+		inst.image_alpha = 1;
+		xdiff = x - atx
+		ydiff = y - aty
 		while(it <= som)
 		{
 			x -= xdiff / som
@@ -70,6 +50,13 @@ else //Create Swing Object
 		obj_swing.atx = x;
 		obj_swing.aty = y;
 		obj_swing.rope = rope
+	}
+	else
+	{
+		instance_create_depth(0, 0, 0, obj_swing);
+		obj_swing.atx = inst.x;
+		obj_swing.aty = inst.y;
+		obj_swing.rope = rope		
 	}
 	instance_destroy();
 }
