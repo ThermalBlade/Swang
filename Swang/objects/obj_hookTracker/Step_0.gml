@@ -85,3 +85,11 @@ else if(place_meeting(obj_web.atx, obj_web.aty, obj_hookable))
 {
 	image_alpha = 0;
 }
+
+if(instance_exists(obj_web))
+{
+	if(obj_web.inst != self)
+	{
+		image_alpha = 0;
+	}
+}

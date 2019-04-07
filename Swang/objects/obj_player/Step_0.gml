@@ -43,9 +43,9 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 			forceWait = true;
 		}
 	}
-	else if(jumpFrameCount < framesToDoubleJump)
+	else if(jumpFrameCount < 1)
 	{
-		if(!jumped and canJump)
+		if(jumped < 2 and canJump and forceWait == false)
 		{
 			if(phy_speed_y < 0)
 			{
@@ -55,24 +55,17 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 			{
 				phy_speed_y = -jumpSpeed;
 			}
-			jumped = true;
-			canJump = false;
-		}
-		jumpFrameCount += 1;
-		if(keyboard_check(jumpPress) and canDoubleJump)
-		{
-			phy_speed_x = 0;
-			phy_speed_y = -doubleJumpSpeed;
-			canDoubleJump = false;
-			if(jumped)
+			jumped += 1;
+			forceWait = true;
+			if(jumped == 2)
 			{
-				canJump = true;
+				canJump = false;
 			}
 		}
+		jumpFrameCount += 1;
 	}
 	else
 	{
-		jumped = false;
 		firstPress = false;
 		frameCount = 0;
 		jumpFrameCount = 0;

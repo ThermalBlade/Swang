@@ -1,8 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-with(obj_player)
+if(snag == 1)
 {
-	canJump = true;
-	canDoubleJump = true;
-	canBoost = true;
+	with(obj_player)
+	{
+		canJump = true;
+		canDoubleJump = true;
+		canBoost = true;
+		jumped = 0;
+	}
 }
