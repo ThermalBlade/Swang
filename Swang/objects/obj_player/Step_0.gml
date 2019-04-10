@@ -24,7 +24,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		if(momentum > boostSpeed)
 		{
-			phy_speed_x = momentum;
+			phy_speed_x = boostSpeed + (momentum / 3);
 		}
 		else
 		{

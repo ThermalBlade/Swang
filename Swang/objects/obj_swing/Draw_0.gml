@@ -4,7 +4,7 @@ if(keyboard_check(swingPress)) //While Holding Space, Draw Line
 {
 	x = obj_player.x
 	y = obj_player.y
-	som  = 60
+	som  = len
 	it = 0
 	xdiff = x - atx
 	ydiff = y - aty
@@ -16,6 +16,7 @@ if(keyboard_check(swingPress)) //While Holding Space, Draw Line
 		draw_self();
 	}
 	draw_sprite(spr_target, 0, x, y)
+	
 }
 else
 {

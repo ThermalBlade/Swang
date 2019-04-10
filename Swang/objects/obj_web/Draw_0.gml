@@ -1,7 +1,5 @@
 /// @description Draw Line Until Space Held
 // You can write your code in this editor
-px = obj_player.x
-py = obj_player.y
 rope = sqrt(2 * sqr(length))
 inst = instance_nearest(atx, aty, obj_hookTracker);
 if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
@@ -10,7 +8,7 @@ if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space 
 	y = obj_player.y
 	atx = x + length
 	aty = y - length
-	som  = pixelsInLine
+	som  = rope
 	it = 0
 	if(!place_meeting(atx, aty, obj_hookable))
 	{

@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "296bd0af-16d8-427e-af6c-2b39dfc730c0",
+            "Value": {
+                "id": "bc293aac-9f31-4eb5-b5d4-95f196a6e197",
+                "resourcePath": "objects\\obj_qLearning\\obj_qLearning.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2e92773a-43a3-4643-9659-9ef43cf340a4",
             "Value": {
                 "id": "aee2a46c-5345-4a4a-8d7e-d1c5353194c1",
