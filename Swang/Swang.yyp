@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "0d93e59d-ed2a-44c3-969b-9082773f412a",
+            "Value": {
+                "id": "15ce2177-f194-4884-9ea3-c0c5c93c6e9b",
+                "resourcePath": "objects\\obj_saveLoad\\obj_saveLoad.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "153e7a8a-a29a-4e40-b33b-2cb55cd50df2",
             "Value": {
                 "id": "275fd490-1c65-4d4a-af8c-b07f324658d4",
@@ -247,6 +255,14 @@
             }
         },
         {
+            "Key": "b85e0b3b-9c8f-419d-b36c-ee10cda117f8",
+            "Value": {
+                "id": "f10c7077-ab8d-4737-93aa-f2c49291d53d",
+                "resourcePath": "scripts\\scr_getPotPos\\scr_getPotPos.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c11e8b42-514f-4fac-89eb-cf079295241e",
             "Value": {
                 "id": "e23f4484-b36b-4ea4-ae8a-0dd99551af75",
@@ -328,7 +344,7 @@
         }
     ],
     "script_order": [
-        
+        "b85e0b3b-9c8f-419d-b36c-ee10cda117f8"
     ],
     "tutorial": ""
 }

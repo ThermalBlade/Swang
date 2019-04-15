@@ -2,7 +2,7 @@
 // You can write your code in this editor
 rope = sqrt(2 * sqr(length))
 inst = instance_nearest(atx, aty, obj_hookTracker);
-if(!keyboard_check(swingPress) or length < minimumLine) //Draw Line Until Space Pressed
+if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 {
 	x = obj_player.x
 	y = obj_player.y

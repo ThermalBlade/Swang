@@ -1,7 +1,11 @@
 /// @description Make the player fall
 // You can write your code in this editor
-
-if(keyboard_check_pressed(swingPress)) //Create Web
+if(!instance_exists(obj_qLearning))
+{
+	sPress = keyboard_check_pressed(swingPress);
+	shPress = keyboard_check(swingPress);
+}
+if(sPress) //Create Web
 {
 	if(!instance_exists(obj_web))
 	{

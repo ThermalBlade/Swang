@@ -3,6 +3,11 @@
 //physics_world_gravity(0,25)
 swingPress = vk_space
 jumpPress = ord("Z")
+if(instance_exists(obj_qLearning))
+{
+	sPress = keyboard_check_pressed(swingPress);
+	shPress = keyboard_check(swingPress);
+}
 restartKey = vk_backspace
 momentum = 0;
 frameCount = 0;

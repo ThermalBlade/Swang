@@ -1,6 +1,6 @@
 /// @description Draw The Line Until Not Swinging
 // You can write your code in this editor
-if(keyboard_check(swingPress)) //While Holding Space, Draw Line
+if(obj_player.shPress) //While Holding Space, Draw Line
 {
 	x = obj_player.x
 	y = obj_player.y
