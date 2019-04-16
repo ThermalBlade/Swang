@@ -94,3 +94,12 @@ if(keyboard_check_pressed(restartKey)) //Temporary Restart - Press Backspace
 {
 	room_goto(rm_game);
 }
+
+if(keyboard_check_pressed(ord("S")))
+{
+	instance_create_depth(0, 0, 0, obj_save);
+}
+else if(keyboard_check_pressed(ord("L")))
+{
+	instance_create_depth(0, 0, 0, obj_save);
+}
