@@ -1,15 +1,19 @@
 /// @description Make the player fall
 // You can write your code in this editor
-if(!instance_exists(obj_qLearning))
+if(instance_exists(obj_qLearning))
 {
-	sPress = keyboard_check_pressed(swingPress);
-	shPress = keyboard_check(swingPress);
+	if(obj_qLearning.selfLearning == false)
+	{
+		sPress = keyboard_check_pressed(swingPress);
+		shPress = keyboard_check(swingPress);
+	}
 }
 if(sPress) //Create Web
 {
 	if(!instance_exists(obj_web))
 	{
 		instance_create_depth(x, y, 0, obj_web);
+		whereInSwing = 1
 	}
 }
 
@@ -95,11 +99,20 @@ if(keyboard_check_pressed(restartKey)) //Temporary Restart - Press Backspace
 	room_goto(rm_game);
 }
 
-if(keyboard_check_pressed(ord("S")))
+/*if(keyboard_check_pressed(ord("S")))
 {
 	instance_create_depth(0, 0, 0, obj_save);
 }
 else if(keyboard_check_pressed(ord("L")))
 {
-	instance_create_depth(0, 0, 0, obj_save);
+	instance_create_depth(0, 0, 0, obj_load);
+}*/
+
+if(y > 1000)
+{
+	room_goto(rm_game)
+}
+else if(y < 0)
+{
+	room_goto(rm_game)
 }

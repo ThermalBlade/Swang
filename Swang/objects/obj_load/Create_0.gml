@@ -12,9 +12,10 @@ if(file_exists("savegame.sav"))
 	{
 		var _map = _list[| i];
 		var _obj = _map[? "obj"];
-		with(instance_create_layer(x, y, layer, asset_get_index(_obj)))
+		with(instance_create_layer(x, y, 0, asset_get_index(_obj)))
 		{
 			x = _map[? "x"];
+			y = _map[? "y"];
 		}
 	}
 	ds_map_destroy(_wrapper);
@@ -24,3 +25,5 @@ else
 {
 	show_debug_message("No file to load!")
 }
+
+instance_destroy();
