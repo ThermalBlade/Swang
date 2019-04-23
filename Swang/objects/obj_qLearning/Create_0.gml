@@ -5,11 +5,14 @@ xIterationMax = 1500;
 iteration = 100;*/
 selfLearning = false
 
+oldState = "";
+newState = "";
+
 update = false
 target = obj_qTarget
 player = obj_player
 
-increment = 10
+increment = 5
 groundLevel = 1000
 ceilingLevel = 0
 

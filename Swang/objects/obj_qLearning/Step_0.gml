@@ -1,159 +1,169 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-newx = obj_player.x
-newy = obj_player.y
-
-if(newx > px + increment or newy > py + increment or newy < py - increment)
+var it = 0 //Player X
+while(it < player.x)
 {
-	
+	it += increment
 }
+it -= increment
+px = it
 
-if(update)
+it = 0 //Player Y
+while(it < player.y)
 {
-	var it = 0 //Player X
-	while(it < player.x)
-	{
-		it += increment
-	}
-	it -= increment
-	px = it
+	it += increment
+}
+it -= increment
+py = it
 
-	it = 0 //Player Y
-	while(it < player.y)
-	{
-		it += increment
-	}
-	it -= increment
-	py = it
+var it = 0 //Target X
+while(it < target.x)
+{
+	it += increment
+}
+it -= increment
+tx = it
 
-	var it = 0 //Target X
-	while(it < target.x)
-	{
-		it += increment
-	}
-	it -= increment
-	tx = it
+it = 0 //Target Y
+while(it < target.y)
+{
+	it += increment
+}
+it -= increment
+ty = it
 
-	it = 0 //Target Y
-	while(it < target.y)
-	{
-		it += increment
-	}
-	it -= increment
-	ty = it
+xFromTarget = tx - px
+yFromTarget = ty - py
+xFromTarget = string(xFromTarget)
+yFromTarget = string(yFromTarget)
+distFromTarget = "(" + xFromTarget + ", " + yFromTarget + ")"
 
-	xFromTarget = tx - px
-	yFromTarget = ty - py
-	xFromTarget = string(xFromTarget)
-	yFromTarget = string(yFromTarget)
-	distFromTarget = "(" + xFromTarget + ", " + yFromTarget + ")"
+it = ceilingLevel //Y From Ceiling and Ground
+while(it < py)
+{
+	it += increment
+}
+it -= increment
+yFromCeiling = it
+var ceilingToGround = groundLevel - ceilingLevel
+yFromGround = ceilingToGround - yFromCeiling
+yFromCeiling = string(yFromCeiling)
+yFromGround = string(yFromGround)
+yCeilGround = "(" + yFromCeiling + ", " + yFromGround + ")"
 
-	it = ceilingLevel //Y From Ceiling and Ground
-	while(it < py)
-	{
-		it += increment
-	}
-	it -= increment
-	yFromCeiling = it
-	var ceilingToGround = groundLevel - ceilingLevel
-	yFromGround = ceilingToGround - yFromCeiling
-	yFromCeiling = string(yFromCeiling)
-	yFromGround = string(yFromGround)
-	yCeilGround = "(" + yFromCeiling + ", " + yFromGround + ")"
-
-	whereInSwing = string(player.whereInSwing) //Where in swing, where hook, rope
-	if(player.whereInSwing == 0)
+whereInSwing = string(player.whereInSwing) //Where in swing, where hook, rope
+if(player.whereInSwing == 0)
+{
+	whereWillHook = string(-1)
+	rope = string(-1)
+}
+else if(player.whereInSwing = 1)
+{
+	if(obj_web.length < obj_web.minimumLine)
 	{
 		whereWillHook = string(-1)
 		rope = string(-1)
 	}
-	else if(player.whereInSwing = 1)
+	else
 	{
-		if(obj_web.length < obj_web.minimumLine)
+		with(obj_web)
 		{
-			whereWillHook = string(-1)
-			rope = string(-1)
+			if(place_meeting(x, y, obj_hookable))
+			{
+				obj_qLearning.atx = x;
+				obj_qLearning.aty = y;
+				obj_qLearning.rope = rope
+			}
+			else
+			{
+				obj_qLearning.atx = inst.x;
+				obj_qLearning.aty = inst.y;
+				obj_qLearning.rope = rope		
+			}
+		}
+		if(px < atx)
+		{
+			it = px 
+			while(it < atx)
+			{
+				it += increment
+			}
+			it -= increment
+			whereWillHookx = string(it)
 		}
 		else
 		{
-			with(obj_web)
+			it = atx
+			while(it < px)
 			{
-				if(place_meeting(x, y, obj_hookable))
-				{
-					obj_qLearning.atx = x;
-					obj_qLearning.aty = y;
-					obj_qLearning.rope = rope
-				}
-				else
-				{
-					obj_qLearning.atx = inst.x;
-					obj_qLearning.aty = inst.y;
-					obj_qLearning.rope = rope		
-				}
+				it += increment
 			}
-			if(px < atx)
-			{
-				it = px 
-				while(it < atx)
-				{
-					it += increment
-				}
-				it -= increment
-				whereWillHookx = string(it)
-			}
-			else
-			{
-				it = atx
-				while(it < px)
-				{
-					it += increment
-				}
-				it -= increment
-				whereWillHookx = string(it)
-			}
-			if(py < aty)
-			{
-				it = py
-				while(it < aty)
-				{
-					it += increment
-				}
-				it -= increment
-				whereWillHooky = string(it)
-			}
-			else
-			{
-				it = aty
-				while(it < py)
-				{
-					it += increment
-				}
-				it -= increment
-				whereWillHooky = string(it)
-			}
-			whereWillHook = "(" + whereWillHookx + ", " + whereWillHooky + ")"
-			rope = string(rope)
+			it -= increment
+			whereWillHookx = string(it)
 		}
+		if(py < aty)
+		{
+			it = py
+			while(it < aty)
+			{
+				it += increment
+			}
+			it -= increment
+			whereWillHooky = string(it)
+		}
+		else
+		{
+			it = aty
+			while(it < py)
+			{
+				it += increment
+			}
+			it -= increment
+			whereWillHooky = string(it)
+		}
+		whereWillHook = "(" + whereWillHookx + ", " + whereWillHooky + ")"
+		rope = string(rope)
 	}
-	swing = "(" + whereInSwing + ", " + whereWillHook + ", " + rope + ")"
+}
+swing = "(" + whereInSwing + ", " + whereWillHook + ", " + rope + ")"
 
-	xSpeed = ceil(player.phy_speed_x)
-	ySpeed = ceil(player.phy_speed_y)
-	xSpeed = string(xSpeed)
-	ySpeed = string(ySpeed)
-	spd = "(" + xSpeed + ", " + ySpeed + ")"
+xSpeed = ceil(player.phy_speed_x)
+ySpeed = ceil(player.phy_speed_y)
+xSpeed = string(xSpeed)
+ySpeed = string(ySpeed)
+spd = "(" + xSpeed + ", " + ySpeed + ")"
 
-	features = "(" + string(distFromTarget) + ", " + string(yCeilGround) + ", " + string(swing) + ", " + string(spd) + ")"
-	if(selfLearning == false)
+newState = "(" + string(distFromTarget) + ", " + string(yCeilGround) + ", " + string(swing) + ", " + string(spd) + ")"
+if(selfLearning == false)
+{
+	action = string(player.whereInSwing)
+	if(oldState != newState)
 	{
-		action = string(player.whereInSwing)
-		stateAction = "(" + string(features) + ", " + action + ")"
-		
-		ds_map_add(global._map, stateAction, 0)
+		var oldStateAction = string("(" + oldState + ", " + action + ")")
+		ds_map_add(global._map, oldStateAction, 0)
 		newLegalActions = scr_getLegalActions();
-		var maxQValue = 0;
-		
+		var newStateAction = string("(" + newState + ", " + newLegalActions[0] + ")")
+		var maxQValue = ds_map_find_value(global._map, newStateAction);
+		if(!is_undefined(maxQValue))
+		{
+			for(var i = 0; i < array_length_1d(newLegalActions); i ++;)
+			{
+				var newStateAction = string("(" + newState + ", " + newLegalActions[i] + ")")
+				var newQValue = ds_map_find_value(global._map, newStateAction);
+				if(newQValue > maxQValue)
+				{
+					maxQValue = newQValue;
+				}
+			}
+		}
+		else
+		{
+			maxQValue = 0;
+		}
+			
+		show_debug_message(newStateAction)
+		oldStateAction = newStateAction
 	}
 }
 
