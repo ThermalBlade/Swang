@@ -3,4 +3,4 @@
 snag = 0
 swingPress = obj_player.swingPress
 
-obj_player.whereInSwing = 3
+obj_player.whereInSwing = 2;

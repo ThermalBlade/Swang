@@ -110,7 +110,14 @@ else if(keyboard_check_pressed(ord("L")))
 
 if(y > 1000)
 {
-	room_goto(rm_game)
+	if(instance_exists(obj_qLearning))
+	{
+		
+	}
+	else
+	{
+		room_goto(rm_game)
+	}
 }
 else if(y < 0)
 {

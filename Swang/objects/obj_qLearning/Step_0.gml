@@ -4,33 +4,33 @@
 var it = 0 //Player X
 while(it < player.x)
 {
-	it += increment
+	it += distIncrement
 }
-it -= increment
+it -= distIncrement
 px = it
 
 it = 0 //Player Y
 while(it < player.y)
 {
-	it += increment
+	it += distIncrement
 }
-it -= increment
+it -= distIncrement
 py = it
 
 var it = 0 //Target X
 while(it < target.x)
 {
-	it += increment
+	it += distIncrement
 }
-it -= increment
+it -= distIncrement
 tx = it
 
 it = 0 //Target Y
 while(it < target.y)
 {
-	it += increment
+	it += distIncrement
 }
-it -= increment
+it -= distIncrement
 ty = it
 
 xFromTarget = tx - px
@@ -42,9 +42,9 @@ distFromTarget = "(" + xFromTarget + ", " + yFromTarget + ")"
 it = ceilingLevel //Y From Ceiling and Ground
 while(it < py)
 {
-	it += increment
+	it += distIncrement
 }
-it -= increment
+it -= distIncrement
 yFromCeiling = it
 var ceilingToGround = groundLevel - ceilingLevel
 yFromGround = ceilingToGround - yFromCeiling
@@ -58,7 +58,7 @@ if(player.whereInSwing == 0)
 	whereWillHook = string(-1)
 	rope = string(-1)
 }
-else if(player.whereInSwing = 1)
+else if(player.whereInSwing == 1)
 {
 	if(obj_web.length < obj_web.minimumLine)
 	{
@@ -73,13 +73,13 @@ else if(player.whereInSwing = 1)
 			{
 				obj_qLearning.atx = x;
 				obj_qLearning.aty = y;
-				obj_qLearning.rope = rope
+				obj_qLearning.rope = floor(rope)
 			}
 			else
 			{
 				obj_qLearning.atx = inst.x;
 				obj_qLearning.aty = inst.y;
-				obj_qLearning.rope = rope		
+				obj_qLearning.rope = floor(rope)		
 			}
 		}
 		if(px < atx)
@@ -87,9 +87,9 @@ else if(player.whereInSwing = 1)
 			it = px 
 			while(it < atx)
 			{
-				it += increment
+				it += ropeIncrement
 			}
-			it -= increment
+			it -= ropeIncrement
 			whereWillHookx = string(it)
 		}
 		else
@@ -97,9 +97,9 @@ else if(player.whereInSwing = 1)
 			it = atx
 			while(it < px)
 			{
-				it += increment
+				it += ropeIncrement
 			}
-			it -= increment
+			it -= ropeIncrement
 			whereWillHookx = string(it)
 		}
 		if(py < aty)
@@ -107,9 +107,9 @@ else if(player.whereInSwing = 1)
 			it = py
 			while(it < aty)
 			{
-				it += increment
+				it += ropeIncrement
 			}
-			it -= increment
+			it -= ropeIncrement
 			whereWillHooky = string(it)
 		}
 		else
@@ -117,13 +117,19 @@ else if(player.whereInSwing = 1)
 			it = aty
 			while(it < py)
 			{
-				it += increment
+				it += ropeIncrement
 			}
-			it -= increment
+			it -= ropeIncrement
 			whereWillHooky = string(it)
 		}
+		var r = 0;
+		while(r < rope)
+		{
+			r += ropeIncrement
+		}
+		r -= ropeIncrement
+		rope = string(r)
 		whereWillHook = "(" + whereWillHookx + ", " + whereWillHooky + ")"
-		rope = string(rope)
 	}
 }
 swing = "(" + whereInSwing + ", " + whereWillHook + ", " + rope + ")"
@@ -140,16 +146,25 @@ if(selfLearning == false)
 	action = string(player.whereInSwing)
 	if(oldState != newState)
 	{
-		var oldStateAction = string("(" + oldState + ", " + action + ")")
+		var oldStateAction = "(" + oldState + ", " + action + ")"
+			//show_debug_message(oldStateAction)
 		ds_map_add(global._map, oldStateAction, 0)
 		newLegalActions = scr_getLegalActions();
-		var newStateAction = string("(" + newState + ", " + newLegalActions[0] + ")")
+		for(var i = 0; i < array_length_1d(newLegalActions); i ++;)
+		{
+			var newStateAction = "(" + newState + ", " + string(newLegalActions[i]) + ")"
+			var newQValue = ds_map_find_value(global._map, newStateAction);
+			if(!is_undefined(newQValue))
+			{
+				break;
+			}
+		}
 		var maxQValue = ds_map_find_value(global._map, newStateAction);
 		if(!is_undefined(maxQValue))
 		{
 			for(var i = 0; i < array_length_1d(newLegalActions); i ++;)
 			{
-				var newStateAction = string("(" + newState + ", " + newLegalActions[i] + ")")
+				var newStateAction = "(" + newState + ", " + string(newLegalActions[i]) + ")"
 				var newQValue = ds_map_find_value(global._map, newStateAction);
 				if(newQValue > maxQValue)
 				{
@@ -161,9 +176,8 @@ if(selfLearning == false)
 		{
 			maxQValue = 0;
 		}
-			
-		show_debug_message(newStateAction)
-		oldStateAction = newStateAction
+		ds_map_replace(global._map, oldStateAction, ((1 - alpha) * ds_map_find_value(global._map, oldStateAction) + alpha * (reward + (discount * maxQValue))))
+		oldState = newState
 	}
 }
 
@@ -182,5 +196,3 @@ else:
 print(state, action)
 self.Q[(state, action)] = ((1 - self.alpha) * self.Q[(state, action)]) + self.alpha * (reward + (self.discount * maxQValue))
 */
-
-var actions = ["actions = extendHook, swing, no Input"]
