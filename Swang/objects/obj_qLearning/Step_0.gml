@@ -140,12 +140,20 @@ xSpeed = string(xSpeed)
 ySpeed = string(ySpeed)
 spd = "(" + xSpeed + ", " + ySpeed + ")"
 
-newState = "(" + string(distFromTarget) + ", " + string(yCeilGround) + ", " + string(swing) + ", " + string(spd) + ")"
+newState = "(" + string(distFromTarget) + ")"
 if(selfLearning == false)
 {
 	action = string(player.whereInSwing)
 	if(oldState != newState)
 	{
+		if(py > 1000 or py < 0 or px > tx + distIncrement)
+		{
+			reward = -1;
+		}
+		else if(px == tx and py == ty)
+		{
+			reward = 1;
+		}
 		var oldStateAction = "(" + oldState + ", " + action + ")"
 			//show_debug_message(oldStateAction)
 		ds_map_add(global._map, oldStateAction, 0)
@@ -178,21 +186,143 @@ if(selfLearning == false)
 		}
 		ds_map_replace(global._map, oldStateAction, ((1 - alpha) * ds_map_find_value(global._map, oldStateAction) + alpha * (reward + (discount * maxQValue))))
 		oldState = newState
+		if(reward == 1 or reward == -1)
+		{
+			room_goto(rm_game);
+		}
+	}
+}
+else
+{
+	legalActions = scr_getLegalActions();
+		//show_debug_message(legalActions[0])
+	if(global.tries mod 50 != 0)
+	{
+		if(global.tries mod 25 != 0)
+		{
+			room_speed = 60*100
+		}
+		else
+		{
+			room_speed = 60
+		}
+		action = "0"
+		if(random(1) < epsilon)
+		{
+			action = legalActions[irandom_range(0, array_length_1d(legalActions) - 1)]
+		}
+		else
+		{
+			var newStateAction = "(" + newState + ", " + string(legalActions[0]) + ")"
+			var maxQValue = ds_map_find_value(global._map, newStateAction);
+			for(var i = 0; i < array_length_1d(legalActions); i ++;)
+			{
+				var newStateAction = "(" + newState + ", " + string(legalActions[i]) + ")"
+				var newQValue = ds_map_find_value(global._map, newStateAction);
+				if(newQValue > maxQValue)
+				{
+					maxQValue = newQValue;
+					action = legalActions[i];
+				}
+			}
+		}
+	}
+	else
+	{
+		room_speed = 60
+		var newStateAction = "(" + newState + ", " + string(legalActions[0]) + ")"
+		var maxQValue = ds_map_find_value(global._map, newStateAction);
+		action = "0"
+		for(var i = 0; i < array_length_1d(legalActions); i ++;)
+		{
+			var newStateAction = "(" + newState + ", " + string(legalActions[i]) + ")"
+			var newQValue = ds_map_find_value(global._map, newStateAction);
+			if(newQValue > maxQValue)
+			{
+				maxQValue = newQValue;
+				action = legalActions[i];
+			}
+		}
+	}
+	if(action == "0")
+	{
+		player.sPress = false;
+		player.shPress = false;
+	}
+	else if(action == "1")
+	{
+		player.sPress = true;
+	}
+	else if(action == "2")
+	{
+		player.shPress = true;
+	}
+	if(oldState != newState)
+	{
+		if(py > 1000 or py < 0 or px > tx + distIncrement)
+		{
+			reward = -1;
+		}
+		else if(px == tx and py == ty)
+		{
+			reward = 100;
+		}
+		else if(px > tx - 10*distIncrement and py > ty - 5*distIncrement and py < ty + 5*distIncrement)
+		{
+			reward = ((tx - py)/20) + abs((ty - py)/20)
+		}
+		var oldStateAction = "(" + oldState + ", " + action + ")"
+			//show_debug_message(oldStateAction)
+		ds_map_add(global._map, oldStateAction, 0)
+		newLegalActions = scr_getLegalActions();
+		for(var i = 0; i < array_length_1d(newLegalActions); i ++;)
+		{
+			var newStateAction = "(" + newState + ", " + string(newLegalActions[i]) + ")"
+			var newQValue = ds_map_find_value(global._map, newStateAction);
+			if(!is_undefined(newQValue))
+			{
+				break;
+			}
+		}
+		var maxQValue = ds_map_find_value(global._map, newStateAction);
+		if(!is_undefined(maxQValue))
+		{
+			for(var i = 0; i < array_length_1d(newLegalActions); i ++;)
+			{
+				var newStateAction = "(" + newState + ", " + string(newLegalActions[i]) + ")"
+				var newQValue = ds_map_find_value(global._map, newStateAction);
+				if(newQValue > maxQValue)
+				{
+					maxQValue = newQValue;
+				}
+			}
+		}
+		else
+		{
+			maxQValue = 0;
+		}
+		ds_map_replace(global._map, oldStateAction, ((1 - alpha) * ds_map_find_value(global._map, oldStateAction) + alpha * (reward + (discount * maxQValue))))
+		if(ds_map_find_value(global._map, oldStateAction) > 0.1)
+		{
+			show_debug_message(ds_map_find_value(global._map, oldStateAction))
+		}
+		oldState = newState
+		if(reward == 100 or reward == -1)
+		{
+			global.tries += 1
+			room_goto(rm_game);
+		}
 	}
 }
 
 /*
-if (state, action) not in self.Q:
-	self.Q[(state, action)] = 0
-newLegalActions = self.getLegalActions(nextState)
-if newLegalActions != ():
-	maxQValue = self.getQValue(nextState, newLegalActions[0])
-	for newAction in newLegalActions:
-		newQValue = self.getQValue(nextState, newAction)
-		if newQValue > maxQValue:
-			maxQValue = newQValue
+legalActions = self.getLegalActions(state)
+action = None
+"*** YOUR CODE HERE ***"
+if legalActions == ():
+	return(None)
+if util.flipCoin(self.epsilon):
+	return(random.choice(legalActions))
 else:
-	maxQValue = 0
-print(state, action)
-self.Q[(state, action)] = ((1 - self.alpha) * self.Q[(state, action)]) + self.alpha * (reward + (self.discount * maxQValue))
+	return(computeActionFromQValues(state))
 */
