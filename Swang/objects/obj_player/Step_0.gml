@@ -8,6 +8,11 @@ if(instance_exists(obj_qLearning))
 		shPress = keyboard_check(swingPress);
 	}
 }
+else
+{
+	sPress = keyboard_check_pressed(swingPress);
+	shPress = keyboard_check(swingPress);
+}
 if(sPress) //Create Web
 {
 	if(!instance_exists(obj_web))

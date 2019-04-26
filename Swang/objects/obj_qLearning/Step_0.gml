@@ -132,7 +132,7 @@ else if(player.whereInSwing == 1)
 		whereWillHook = "(" + whereWillHookx + ", " + whereWillHooky + ")"
 	}
 }
-swing = "(" + whereInSwing + ", " + whereWillHook + ", " + rope + ")"
+swing = "(" + whereWillHook + ", " + rope + ")"
 
 xSpeed = ceil(player.phy_speed_x)
 ySpeed = ceil(player.phy_speed_y)
@@ -196,16 +196,9 @@ else
 {
 	legalActions = scr_getLegalActions();
 		//show_debug_message(legalActions[0])
-	if(global.tries mod 50 != 0)
+	if(global.tries mod 100 != 0)
 	{
-		if(global.tries mod 25 != 0)
-		{
-			room_speed = 60*100
-		}
-		else
-		{
-			room_speed = 60
-		}
+		room_speed = 60*100
 		action = "0"
 		if(random(1) < epsilon)
 		{
@@ -261,7 +254,7 @@ else
 	{
 		if(py > 1000 or py < 0 or px > tx + distIncrement)
 		{
-			reward = -1;
+			reward = -100;
 		}
 		else if(px == tx and py == ty)
 		{
@@ -269,7 +262,7 @@ else
 		}
 		else if(px > tx - 10*distIncrement and py > ty - 5*distIncrement and py < ty + 5*distIncrement)
 		{
-			reward = ((tx - py)/20) + abs((ty - py)/20)
+			reward = (20 / (tx - px + 1)) + abs(20 / (ty - py + 1))
 		}
 		var oldStateAction = "(" + oldState + ", " + action + ")"
 			//show_debug_message(oldStateAction)
@@ -302,12 +295,8 @@ else
 			maxQValue = 0;
 		}
 		ds_map_replace(global._map, oldStateAction, ((1 - alpha) * ds_map_find_value(global._map, oldStateAction) + alpha * (reward + (discount * maxQValue))))
-		if(ds_map_find_value(global._map, oldStateAction) > 0.1)
-		{
-			show_debug_message(ds_map_find_value(global._map, oldStateAction))
-		}
 		oldState = newState
-		if(reward == 100 or reward == -1)
+		if(reward == 100 or reward == -100)
 		{
 			global.tries += 1
 			room_goto(rm_game);
