@@ -141,6 +141,9 @@ ySpeed = string(ySpeed)
 spd = "(" + xSpeed + ", " + ySpeed + ")"
 
 newState = "(" + string(distFromTarget) + ")"
+
+
+///Everything above is defining state, all below is qLearning
 if(selfLearning == false)
 {
 	action = string(player.whereInSwing)
@@ -196,9 +199,9 @@ else
 {
 	legalActions = scr_getLegalActions();
 		//show_debug_message(legalActions[0])
-	if(global.tries mod 100 != 0)
+	if(global.tries mod 250 != 0)
 	{
-		room_speed = 60*100
+		room_speed = 60*300
 		action = "0"
 		if(random(1) < epsilon)
 		{
