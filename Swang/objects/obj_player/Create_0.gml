@@ -25,7 +25,7 @@ canJump = true;
 canDoubleJump = true;
 forceWait = false;
 
-image_speed = 3;
+image_speed = 1;
 fallSpeed = 0.08;
 boostSpeed = 5;
 jumpSpeed = 5;

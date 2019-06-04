@@ -1,5 +1,14 @@
 /// @description Make the player fall
 // You can write your code in this editor
+
+momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
+var is = 2 + (1.4 * momentum)
+if(is > 16)
+{
+	is = 16;
+}
+image_speed = is;
+
 if(instance_exists(obj_qLearning))
 {
 	if(obj_qLearning.selfLearning == false)
@@ -31,7 +40,6 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	if(!firstPress)
 	{
 		firstPress = true;
-		momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
 	}
 	if(frameCount >= framesToBoost and frameCount < boostTime and keyboard_check(jumpPress) and canBoost)
 	{
@@ -112,19 +120,3 @@ else if(keyboard_check_pressed(ord("L")))
 {
 	instance_create_depth(0, 0, 0, obj_load);
 }*/
-
-if(y > 1000)
-{
-	if(instance_exists(obj_qLearning))
-	{
-		
-	}
-	else
-	{
-		room_goto(rm_game)
-	}
-}
-else if(y < 0)
-{
-	room_goto(rm_game)
-}
