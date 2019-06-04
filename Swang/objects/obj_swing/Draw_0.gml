@@ -12,8 +12,11 @@ if(obj_player.shPress) //While Holding Space, Draw Line
 	{
 		x -= xdiff / som
 		y -= ydiff / som
-		it += 1
 		draw_self();
+		x += 1;
+		draw_self();
+		x -= 1;
+		it += 1
 	}
 	draw_sprite(spr_target, 0, x, y)
 	

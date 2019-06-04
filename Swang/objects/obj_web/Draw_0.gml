@@ -13,32 +13,21 @@ if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 	if(!place_meeting(atx, aty, obj_hookable))
 	{
 		inst.image_alpha = 1;
-		xdiff = x - atx
-		ydiff = y - aty
-		while(it <= som)
-		{
-			x -= xdiff / som
-			y -= ydiff / som
-			it += 1
-			draw_self();
-		}
-		draw_sprite(spr_target, 0, x, y)
-		length += extendSpeed
 	}
-	else
+	xdiff = x - atx
+	ydiff = y - aty
+	while(it <= som)
 	{
-		xdiff = x - atx
-		ydiff = y - aty
-		while(it <= som)
-		{
-			x -= xdiff / som
-			y -= ydiff / som
-			it += 1
-			draw_self();
-		}
-		draw_sprite(spr_target, 0, x, y)
-		length += extendSpeed
+		x -= xdiff / som
+		y -= ydiff / som
+		draw_self();
+		x += 1;
+		draw_self();
+		x -= 1;
+		it += 1
 	}
+	draw_sprite(spr_target, 0, x, y)
+	length += extendSpeed
 }
 else //Create Swing Object
 {

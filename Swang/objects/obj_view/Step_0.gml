@@ -18,21 +18,33 @@ shortWebCutoff = floor(camWidth / shortCutoffDem);
 maxFallCutoff = floor(camWidth / maxCutoffDem);
 shortFallCutoff = floor(camWidth / shortCutoffDem);
 
+if(instance_exists(obj_web))
+{
+	if(!point_in_rectangle(obj_web.atx, obj_web.aty, camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]), camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]))) 
+	{
+	   offsetForWeb = true;
+	}
+}
+else if(offsetForWeb == true)
+{
+	offsetForWeb = false;
+}
+
 x = obj_player.x + playerXOffset;
 y = obj_player.phy_position_y - playerYOffset + yOffset
 
-if(instance_exists(obj_web) and yOffset > -maxWebCutoff) //Look upward, shooting web
+if(instance_exists(obj_web) and offsetForWeb) //Look upward, shooting web
 {
 	if(yOffset > -shortWebCutoff)
 	{
-		yOffset -= 2;
+		yOffset -= 4;
 	}
 	else if(yOffset > -maxWebCutoff)
 	{
-		yOffset -= 1;
+		yOffset -= 2;
 	}
 }
-else if(obj_player.phy_speed_y > 0 and yOffset < maxFallCutoff and !instance_exists(obj_web))
+else if(obj_player.phy_speed_y > 0 and yOffset < maxFallCutoff) //Falling, look down
 {
 	if(yOffset < shortFallCutoff)
 	{

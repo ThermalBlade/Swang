@@ -10,4 +10,5 @@ growOutRate = 4;
 growInRate = 3;
 
 yOffset = 0;
+offsetForWeb = false;
 camWidth = startingCamWidth;
