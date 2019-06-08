@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
-var is = 2 + (1.4 * momentum)
-if(is > 16)
+var is = 3 + (1.2 * momentum)
+if(is > 12)
 {
-	is = 16;
+	is = 12;
 }
 image_speed = is;
 
