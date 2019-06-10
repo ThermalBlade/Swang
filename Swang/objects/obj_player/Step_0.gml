@@ -9,19 +9,10 @@ if(is > 12)
 }
 image_speed = is;
 
-if(instance_exists(obj_qLearning))
-{
-	if(obj_qLearning.selfLearning == false)
-	{
-		sPress = keyboard_check_pressed(swingPress);
-		shPress = keyboard_check(swingPress);
-	}
-}
-else
-{
-	sPress = keyboard_check_pressed(swingPress);
-	shPress = keyboard_check(swingPress);
-}
+sPress = keyboard_check_pressed(swingPress);
+shPress = keyboard_check(swingPress);
+jPress = keyboard_check(jumpPress);
+	
 if(sPress) //Create Web
 {
 	if(!instance_exists(obj_web))
@@ -77,6 +68,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 				phy_speed_y = -jumpSpeed;
 			}
 			jumped += 1;
+			show_debug_message("jumped")
 			forceWait = true;
 			if(jumped == 2)
 			{
@@ -102,7 +94,7 @@ if(forceWait = true and !keyboard_check(jumpPress)) //Force new click for jump/b
 	forceWait = false;
 }
 
-if(!instance_exists(obj_swing)) //Fall and adjust camera
+if(!instance_exists(obj_swing)) //Fall
 {
 	phy_speed_y += fallSpeed;
 }

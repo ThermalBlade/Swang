@@ -50,3 +50,18 @@ else
 {
 	obj_player.phy_speed_y += obj_player.fallSpeed
 }
+
+if(obj_player.jPress)
+{
+	if(!snag)
+	{
+		rope -= 2;
+	}
+	else
+	{
+		rope -= 2;
+		obj_player.phy_position_x += 2 * negCos
+		obj_player.phy_position_y -= 2 * negSin
+		obj_player.forceWait = true;
+	}
+}
