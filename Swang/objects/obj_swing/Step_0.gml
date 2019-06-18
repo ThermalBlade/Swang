@@ -53,6 +53,7 @@ else
 
 if(obj_player.jPress)
 {
+	obj_player.forceWait = true;
 	if(!snag)
 	{
 		rope -= 2;
@@ -60,8 +61,9 @@ if(obj_player.jPress)
 	else
 	{
 		rope -= 2;
-		obj_player.phy_position_x += 2 * negCos
-		obj_player.phy_position_y -= 2 * negSin
-		obj_player.forceWait = true;
+		obj_player.phy_position_x += (momentum / 2) * negCos
+		obj_player.phy_position_y -= (momentum / 2) * negSin
+		/*obj_player.phy_speed_y -= 1 * negSin;
+		obj_player.phy_speed_x += 1 * negCos;*/
 	}
 }

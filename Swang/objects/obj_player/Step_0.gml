@@ -88,8 +88,12 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 		}
 	}
 }
+else
+{
+	firstPress = false;
+}
 
-if(forceWait = true and !keyboard_check(jumpPress)) //Force new click for jump/boost
+if(forceWait == true and !keyboard_check(jumpPress)) //Force new click for jump/boost
 {
 	forceWait = false;
 }
@@ -103,6 +107,8 @@ if(keyboard_check_pressed(restartKey)) //Temporary Restart - Press Backspace
 {
 	room_goto(rm_game);
 }
+
+show_debug_message(firstPress)
 
 /*if(keyboard_check_pressed(ord("S")))
 {

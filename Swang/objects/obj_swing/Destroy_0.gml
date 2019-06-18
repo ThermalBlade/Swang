@@ -5,6 +5,7 @@ if(snag == 1)
 {
 	with(obj_player)
 	{
+		frameCount = 0;
 		canJump = true;
 		canDoubleJump = true;
 		canBoost = true;
