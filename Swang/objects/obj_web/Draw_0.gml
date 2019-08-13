@@ -20,10 +20,22 @@ if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 	{
 		x -= xdiff / som
 		y -= ydiff / som
+		
+		x -= 1;
+		draw_self();
+		x += 1;
 		draw_self();
 		x += 1;
 		draw_self();
 		x -= 1;
+		y -= 1;
+		draw_self();
+		y += 1;
+		draw_self();
+		y += 1;
+		draw_self();
+		y -= 1;
+		
 		it += 1
 	}
 	draw_sprite(spr_target, 0, x, y)

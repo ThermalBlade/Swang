@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "54b57b75-f18d-4894-94be-1bc4e8e9fca5",
+            "Value": {
+                "id": "2cbed579-675d-46aa-869e-af4e14617ed1",
+                "resourcePath": "objects\\obj_gui\\obj_gui.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "59b8a09a-4ec5-4f0d-b214-511b2bc7b201",
             "Value": {
                 "id": "9265a713-f8b7-4279-9680-81cb0bd9481b",
@@ -292,6 +300,14 @@
                 "id": "73fda1a5-30b7-49fa-b405-95d18da218b2",
                 "resourcePath": "objects\\obj_hookTracker\\obj_hookTracker.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a8c18b09-170a-434d-866a-61a892eb26dc",
+            "Value": {
+                "id": "ca993ed1-de14-4f47-9f27-addf1ef6f17e",
+                "resourcePath": "sprites\\spr_fuelBar\\spr_fuelBar.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
