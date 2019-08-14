@@ -24,12 +24,15 @@ canBoost = true;
 canJump = true;
 canDoubleJump = true;
 forceWait = false;
+fuel = 80;
 
 image_speed = 1;
 fallSpeed = 0.08;
 boostSpeed = 5;
 jumpSpeed = 5;
 doubleJumpSpeed= 4;
+boostFuelLoss = 0.25;
+jumpFuelLoss = 20;
 
 framesToBoost = 8;
 framesToDoubleJump = 10;

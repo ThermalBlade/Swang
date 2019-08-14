@@ -4,6 +4,7 @@ angle = point_direction(obj_player.x, obj_player.y, atx, aty)
 xdiff = atx - obj_player.x
 ydiff = aty - obj_player.y
 len = sqrt(sqr(xdiff) + sqr(ydiff))
+obj_player.fuel += swingFuelGain;
 if(len > rope and snag == 0) //If Rope Snags
 {
 	var px = obj_player.x
@@ -54,6 +55,7 @@ else
 if(obj_player.jPress)
 {
 	obj_player.forceWait = true;
+	obj_player.fuel -= pullFuelLoss;
 	if(!snag)
 	{
 		rope -= 2;

@@ -18,7 +18,7 @@ if(sPress) //Create Web
 	if(!instance_exists(obj_web))
 	{
 		instance_create_depth(x, y, 0, obj_web);
-		whereInSwing = 1
+		whereInSwing = 1;
 	}
 }
 
@@ -32,7 +32,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		firstPress = true;
 	}
-	if(frameCount >= framesToBoost and frameCount < boostTime and keyboard_check(jumpPress) and canBoost)
+	if(frameCount >= framesToBoost and keyboard_check(jumpPress) and fuel > 0)
 	{
 		if(momentum > boostSpeed)
 		{
@@ -40,8 +40,9 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 		}
 		else
 		{
-			phy_speed_x = boostSpeed
+			phy_speed_x = boostSpeed;
 		}
+		fuel -= boostFuelLoss;
 		phy_speed_y = 0;
 		frameCount += 1;
 	}
@@ -49,7 +50,6 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		frameCount = 0;
 		firstPress = false;
-		canBoost = false;
 		if(keyboard_check(jumpPress))
 		{
 			forceWait = true;
@@ -57,7 +57,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	}
 	else if(jumpFrameCount < 1)
 	{
-		if(jumped < 2 and canJump and forceWait == false)
+		if(canJump and forceWait == false and fuel >= 20)
 		{
 			if(phy_speed_y < 0)
 			{
@@ -67,13 +67,8 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 			{
 				phy_speed_y = -jumpSpeed;
 			}
-			jumped += 1;
-			show_debug_message("jumped")
 			forceWait = true;
-			if(jumped == 2)
-			{
-				canJump = false;
-			}
+			fuel -= jumpFuelLoss;
 		}
 		jumpFrameCount += 1;
 	}
@@ -108,13 +103,9 @@ if(keyboard_check_pressed(restartKey)) //Temporary Restart - Press Backspace
 	room_goto(rm_game);
 }
 
-show_debug_message(firstPress)
-
-/*if(keyboard_check_pressed(ord("S")))
-{
-	instance_create_depth(0, 0, 0, obj_save);
+if(fuel < 0){
+	fuel = 0;
 }
-else if(keyboard_check_pressed(ord("L")))
-{
-	instance_create_depth(0, 0, 0, obj_load);
-}*/
+else if(fuel > 80){
+	fuel = 80;
+}
