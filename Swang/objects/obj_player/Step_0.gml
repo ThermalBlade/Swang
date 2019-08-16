@@ -13,11 +13,12 @@ sPress = keyboard_check_pressed(swingPress);
 shPress = keyboard_check(swingPress);
 jPress = keyboard_check(jumpPress);
 	
-if(sPress) //Create Web
+if(sPress and startNoSpamTimer == false) //Create Web
 {
 	if(!instance_exists(obj_web))
 	{
 		instance_create_depth(x, y, 0, obj_web);
+		startNoSpamTimer = true;
 		whereInSwing = 1;
 	}
 }
@@ -108,4 +109,12 @@ if(fuel < 0){
 }
 else if(fuel > 80){
 	fuel = 80;
+}
+
+if(startNoSpamTimer == true){
+	newRopeTimer += 1;
+	if(newRopeTimer > newRopeTimerMax){
+		startNoSpamTimer = false;
+		newRopeTimer = 0;
+	}
 }

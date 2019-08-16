@@ -1,6 +1,8 @@
 /// @description Initialize Player Variables
 // You can write your code in this editor
 //physics_world_gravity(0,25)
+depth = -10;
+
 swingPress = vk_space
 jumpPress = ord("Z")
 if(!instance_exists(obj_qLearning))
@@ -24,6 +26,9 @@ canBoost = true;
 canJump = true;
 canDoubleJump = true;
 forceWait = false;
+newRopeTimer = 0;
+startNoSpamTimer = false;
+newRopeTimerMax = 45;
 fuel = 80;
 
 image_speed = 1;
