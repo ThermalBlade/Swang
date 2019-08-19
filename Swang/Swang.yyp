@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "0c10cc2c-21ad-48ff-9f63-371e05aced91",
+            "Value": {
+                "id": "e4753420-cb65-4d80-9e3f-876854c4ab28",
+                "resourcePath": "sprites\\spr_w1b12\\spr_w1b12.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0d86706c-c4f1-4c57-8db3-495659ecf761",
             "Value": {
                 "id": "05f9740d-5866-43fd-a0bc-a62c6966acad",
@@ -155,6 +163,14 @@
             "Value": {
                 "id": "9265a713-f8b7-4279-9680-81cb0bd9481b",
                 "resourcePath": "objects\/obj_web\/obj_web.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5a1076f3-d3b9-49b9-b509-4d442b183947",
+            "Value": {
+                "id": "cce24115-6d43-4271-9d16-6aebac3c8683",
+                "resourcePath": "objects\\obj_w1greenHotelSign\\obj_w1greenHotelSign.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -380,6 +396,22 @@
                 "id": "8ee91e35-58e2-4eea-b9dc-6b7c7fa99fe8",
                 "resourcePath": "views\/cce2795a-5a9d-4e28-9b8e-457cd4e8eda9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ce664f25-0a0f-4b28-9696-44de7d031771",
+            "Value": {
+                "id": "cb87f0dd-7990-4a1e-bb7a-4b65406b3337",
+                "resourcePath": "sprites\\spr_w1sideWalk\\spr_w1sideWalk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d088a520-b56d-4143-b62c-e9f0a7740398",
+            "Value": {
+                "id": "cf6a2e97-5dad-4a11-815a-3c8f1b762b25",
+                "resourcePath": "sprites\\spr_w1greenHotelSign\\spr_w1greenHotelSign.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
