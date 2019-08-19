@@ -175,6 +175,22 @@
             }
         },
         {
+            "Key": "5d244723-83e6-42f6-88a4-0e90ac1d7737",
+            "Value": {
+                "id": "1eae165e-0db2-4d09-983f-ac69780e0155",
+                "resourcePath": "sprites\\spr_dayBackground\\spr_dayBackground.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5dc04ab2-eb7c-4bcf-9fc4-469b815ee8eb",
+            "Value": {
+                "id": "51f9c039-ea53-4fae-adfd-8b80b3227ca1",
+                "resourcePath": "objects\\obj_modernBackgroundDraw\\obj_modernBackgroundDraw.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5ef4445c-de7f-4d97-86b6-7bc5eba03aab",
             "Value": {
                 "id": "4b5cfcd7-b069-4481-83b7-f67e2451c39b",

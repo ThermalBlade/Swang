@@ -10,4 +10,3 @@ if(obj_player.fuel == 0){
 draw_sprite(spr_fuelBar, currentIndex, 960, 10);
 
 draw_set_alpha(1);
-show_debug_message(obj_player.fuel)
