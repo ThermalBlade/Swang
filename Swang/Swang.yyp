@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "16d72672-6ec9-427a-9871-a792aa11fc92",
+            "Value": {
+                "id": "1808c14f-3d44-43bd-a648-e90a47518649",
+                "resourcePath": "sprites\\spr_w1skyline1\\spr_w1skyline1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "17aaa072-8372-4f4b-8645-c38bab8700df",
             "Value": {
                 "id": "75914201-bbe2-4092-91d2-1bc5c88acaab",
@@ -148,6 +156,14 @@
                 "id": "2a38f78d-fae1-4a68-98b3-45b339c81018",
                 "resourcePath": "sprites\/spr_player\/spr_player.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "52abb570-b912-40d7-8ad4-2c2e50568617",
+            "Value": {
+                "id": "e7b07913-efe5-4084-9be1-f6083bda3ffc",
+                "resourcePath": "objects\\obj_building2\\obj_building2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -308,6 +324,14 @@
                 "id": "4be5a337-6b37-415d-ae0f-4c41775edda0",
                 "resourcePath": "views\/8e07f2a2-b3bd-492f-b0c8-ab37b966618d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "901a4934-ae53-4fa6-8997-cf2b711097ca",
+            "Value": {
+                "id": "6f662aba-9dd3-466d-b2a3-3d4a34291c01",
+                "resourcePath": "objects\\obj_w1skyline1\\obj_w1skyline1.yy",
+                "resourceType": "GMObject"
             }
         },
         {
