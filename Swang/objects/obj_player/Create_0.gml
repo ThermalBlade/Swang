@@ -42,5 +42,6 @@ jumpFuelLoss = 20;
 framesToBoost = 8;
 framesToDoubleJump = 10;
 boostTime = 60;
+boosting = false;
 
 whereInSwing = 0

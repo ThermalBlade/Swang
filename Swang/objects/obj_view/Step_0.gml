@@ -9,6 +9,7 @@ else if(camWidth > (trWidth + growInRate))
 {
 	camWidth -= growInRate;
 }
+show_debug_message(camWidth)
 
 camera_set_view_size(view_camera[0], camWidth, camWidth * (9/16));
 

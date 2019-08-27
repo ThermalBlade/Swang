@@ -33,6 +33,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		firstPress = true;
 	}
+	boosting = false;
 	if(frameCount >= framesToBoost and keyboard_check(jumpPress) and fuel > 0)
 	{
 		if(momentum > boostSpeed)
@@ -43,6 +44,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 		{
 			phy_speed_x = boostSpeed;
 		}
+		boosting = true;
 		fuel -= boostFuelLoss;
 		phy_speed_y = 0;
 		frameCount += 1;
@@ -94,7 +96,7 @@ if(forceWait == true and !keyboard_check(jumpPress)) //Force new click for jump/
 	forceWait = false;
 }
 
-if(!instance_exists(obj_swing)) //Fall
+if(!instance_exists(obj_swing) and boosting == false) //Fall
 {
 	phy_speed_y += fallSpeed;
 }
