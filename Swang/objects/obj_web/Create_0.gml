@@ -1,6 +1,6 @@
 /// @description Initialize Variables
 // You can write your code in this editor
-extendSpeed = 3 //How Fast The Line Extends
+extendSpeed = 3; //How Fast The Line Extends
 depth = -10;
 length = extendSpeed
 minimumLine = 27
@@ -12,4 +12,4 @@ extentionsMax = 120;
 atx = obj_player.x
 aty = obj_player.y
 
-obj_player.whereInSwing = 2
+obj_player.whereInSwing = 2;
