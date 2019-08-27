@@ -7,6 +7,6 @@ currentIndex = floor(((90 - obj_player.fuel) - 0.001) / 10);
 if(obj_player.fuel == 0){
 	currentIndex = 9;
 }
-draw_sprite(spr_fuelBar, currentIndex, 960, 10);
+draw_sprite(spr_fuelBar, currentIndex, 960, 10 + trueYOffset);
 
 draw_set_alpha(1);
