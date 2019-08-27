@@ -7,7 +7,7 @@ if(x - obj_player.x < 1000 and created == false)
 	insta.inst = self;
 	created = true
 }
-else if(x - obj_player.x < -500 and created == true)
+else if(x - obj_player.x < -1500 and created == true)
 {
 	with(insta){instance_destroy();}
 }
