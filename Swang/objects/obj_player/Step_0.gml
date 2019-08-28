@@ -1,5 +1,6 @@
 /// @description Make the player fall
 // You can write your code in this editor
+boosting = false;
 
 momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
 var is = 3 + (1.2 * momentum)
@@ -33,7 +34,6 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		firstPress = true;
 	}
-	boosting = false;
 	if(frameCount >= framesToBoost and keyboard_check(jumpPress) and fuel > 0)
 	{
 		if(momentum > boostSpeed)
