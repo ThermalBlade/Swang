@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "528ea816-6240-4f75-9c29-172bc4cfc595",
+            "Value": {
+                "id": "79b42558-3bb8-4ce9-b56a-e8688b783cb2",
+                "resourcePath": "objects\\obj_massBuilding\\obj_massBuilding.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "52abb570-b912-40d7-8ad4-2c2e50568617",
             "Value": {
                 "id": "e7b07913-efe5-4084-9be1-f6083bda3ffc",
