@@ -120,9 +120,3 @@ if(startNoSpamTimer == true){
 		newRopeTimer = 0;
 	}
 }
-
-show_debug_message(phy_position_y)
-if(phy_position_y >= room_height){
-	//phy_speed_y = 0;
-	//phy_position_y = room_height;
-}

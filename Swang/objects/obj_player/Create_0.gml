@@ -2,6 +2,7 @@
 // You can write your code in this editor
 //physics_world_gravity(0,25)
 depth = -10;
+phy_fixed_rotation = true;
 
 swingPress = vk_space
 jumpPress = ord("Z")
