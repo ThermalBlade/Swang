@@ -1,7 +1,7 @@
 /// @description Initialize Variables
 // You can write your code in this editor
 extendSpeed = 3; //How Fast The Line Extends
-depth = -10;
+depth = -1;
 length = extendSpeed
 minimumLine = 27
 swingPress = obj_player.swingPress

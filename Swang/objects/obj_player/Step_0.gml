@@ -10,9 +10,18 @@ if(is > 12)
 }
 image_speed = is;
 
-sPress = keyboard_check_pressed(swingPress);
-shPress = keyboard_check(swingPress);
-jPress = keyboard_check(jumpPress);
+if(delay == 0)
+{
+	sPress = keyboard_check_pressed(swingPress);
+	shPress = keyboard_check(swingPress);
+	jPress = keyboard_check(jumpPress);
+}
+else{
+	sPress = 0;
+	shPress = 0;
+	jPress = 0;
+	delay -= 1;
+}
 	
 if(sPress and startNoSpamTimer == false) //Create Web
 {
@@ -24,7 +33,7 @@ if(sPress and startNoSpamTimer == false) //Create Web
 	}
 }
 
-if(!instance_exists(obj_swing) and keyboard_check(jumpPress) and frameCount < framesToBoost and !firstPress and !forceWait) //Jumping and Boosting
+if(!instance_exists(obj_swing) and jPress and frameCount < framesToBoost and !firstPress and !forceWait) //Jumping and Boosting
 {
 	frameCount += 1;
 }
@@ -34,7 +43,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		firstPress = true;
 	}
-	if(frameCount >= framesToBoost and keyboard_check(jumpPress) and fuel > 0)
+	if(frameCount >= framesToBoost and jPress and fuel > 0)
 	{
 		if(momentum > boostSpeed)
 		{
@@ -53,7 +62,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		frameCount = 0;
 		firstPress = false;
-		if(keyboard_check(jumpPress))
+		if(jPress)
 		{
 			forceWait = true;
 		}
@@ -80,7 +89,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 		firstPress = false;
 		frameCount = 0;
 		jumpFrameCount = 0;
-		if(keyboard_check(jumpPress))
+		if(jPress)
 		{
 			forceWait = true;
 		}
@@ -91,7 +100,7 @@ else
 	firstPress = false;
 }
 
-if(forceWait == true and !keyboard_check(jumpPress)) //Force new click for jump/boost
+if(forceWait == true and !jPress) //Force new click for jump/boost
 {
 	forceWait = false;
 }

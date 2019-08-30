@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "30013588-8e33-4ba0-863b-d8cf9e7aa3cf",
+            "Value": {
+                "id": "6e6b2345-d550-43d6-96c5-6307edc94a79",
+                "resourcePath": "sprites\\spr_playerRunning4\\spr_playerRunning4.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "35590af5-ed2f-400a-8758-9a850630c5db",
             "Value": {
                 "id": "bb308b0d-16c4-4857-85ea-7ad3a6cdd09f",
@@ -255,6 +263,14 @@
             }
         },
         {
+            "Key": "6e90ef24-32a6-4360-80f5-f29082bcad01",
+            "Value": {
+                "id": "652e4f01-991a-440d-9029-6e679a1102e9",
+                "resourcePath": "sprites\\spr_playerRunning2\\spr_playerRunning2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "721b059d-f31b-409d-948c-305695087a99",
             "Value": {
                 "id": "95fa376c-6bf6-40c3-bcc3-0f78b10d442f",
@@ -339,6 +355,14 @@
             "Value": {
                 "id": "6f662aba-9dd3-466d-b2a3-3d4a34291c01",
                 "resourcePath": "objects\\obj_w1skyline1\\obj_w1skyline1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a0285fc0-7566-40d9-b291-d2d12a24575f",
+            "Value": {
+                "id": "aa0e0f16-c2ba-4730-abd8-531795f668d8",
+                "resourcePath": "objects\\obj_w1greenHotelSign1Floor\\obj_w1greenHotelSign1Floor.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -495,6 +519,14 @@
             }
         },
         {
+            "Key": "d76ae5c2-7561-47e9-aff5-39a15e0fb028",
+            "Value": {
+                "id": "8f9f97fc-43fb-4747-8b60-c73b14a3305f",
+                "resourcePath": "sprites\\spr_playerRunning1\\spr_playerRunning1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "dafb2a45-d7c7-4c77-8111-b3f3277951d5",
             "Value": {
                 "id": "7b9313cc-ce02-488c-a05a-82fb6f6eabed",
@@ -524,6 +556,14 @@
                 "id": "465387ee-f72b-451c-b55c-27ea4fc53408",
                 "resourcePath": "views\/e02502ae-733c-43f4-8801-f93d72da2413.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e384c297-5e9f-427d-a601-92ebbb7e24a9",
+            "Value": {
+                "id": "818299dd-538a-4f25-be41-e9cf9ce7a17f",
+                "resourcePath": "sprites\\spr_w1greenHotelSign1Floor\\spr_w1greenHotelSign1Floor.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -564,6 +604,14 @@
                 "id": "ae70981f-7b4f-4c76-9149-f4a340609cf2",
                 "resourcePath": "objects\\obj_hookable\\obj_hookable.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f9462298-e098-44db-ab22-41709e217f8a",
+            "Value": {
+                "id": "a8507541-0483-48b1-9d16-ee06072eac56",
+                "resourcePath": "sprites\\spr_playerRunning3\\spr_playerRunning3.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],

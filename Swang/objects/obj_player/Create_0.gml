@@ -39,6 +39,7 @@ jumpSpeed = 5;
 doubleJumpSpeed= 4;
 boostFuelLoss = 0.25;
 jumpFuelLoss = 20;
+delay = 0;
 
 framesToBoost = 8;
 framesToDoubleJump = 10;

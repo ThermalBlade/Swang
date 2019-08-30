@@ -6,3 +6,4 @@ if(instance_exists(obj_web)){
 if(instance_exists(obj_swing)){
 	with(obj_swing){instance_destroy();}
 }
+obj_player.delay = 90;

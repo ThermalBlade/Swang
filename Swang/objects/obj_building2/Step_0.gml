@@ -8,10 +8,13 @@ if(obj_player.phy_position_x >= x + 150 and swapped == false){
 		with(instance_find(obj_building, i)){instance_destroy();}
 	}*/
 	with(obj_massBuilding){instance_destroy();}
-	obj_player.phy_position_x -= 1500;
 	if(instance_exists(obj_swing)){
 		obj_swing.atx -= 1500;
 	}
+	if(instance_exists(obj_web)){
+		obj_web.atx -= 1500;
+	}
+	obj_player.phy_position_x -= 1500;
 	swapped = true;
 	ender = true;
 }

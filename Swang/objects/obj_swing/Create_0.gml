@@ -1,6 +1,6 @@
 /// @description Initialize Variables
 // You can write your code in this editor
-depth = -10;
+depth = -1;
 
 snag = 0
 swingPress = obj_player.swingPress
