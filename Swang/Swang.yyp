@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "43189ad9-465e-45e3-b2ec-13b046eeb559",
+            "Value": {
+                "id": "d1aa6617-274d-45e6-9ae1-0a79443c1df4",
+                "resourcePath": "sprites\\spr_waitBar\\spr_waitBar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4c0bf687-b42c-4a0b-8862-25ebbf141cc9",
             "Value": {
                 "id": "2a38f78d-fae1-4a68-98b3-45b339c81018",

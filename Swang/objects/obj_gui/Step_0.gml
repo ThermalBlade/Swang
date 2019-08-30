@@ -5,3 +5,7 @@ yOffset += 3;
 if(yOffset >= 360){
 	yOffset = 0;
 }
+
+if(obj_player.delay > 0){
+	
+}

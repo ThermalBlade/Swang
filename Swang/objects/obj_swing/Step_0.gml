@@ -52,7 +52,7 @@ else
 	obj_player.phy_speed_y += obj_player.fallSpeed
 }
 
-if(obj_player.jPress)
+if(obj_player.jPress and obj_player.running == false)
 {
 	obj_player.forceWait = true;
 	obj_player.fuel -= pullFuelLoss;

@@ -6,4 +6,7 @@ if(instance_exists(obj_web)){
 if(instance_exists(obj_swing)){
 	with(obj_swing){instance_destroy();}
 }
-obj_player.delay = 90;
+obj_player.delay = obj_player.delayTime;
+if(obj_player.phy_speed_x > obj_player.hitWallPunish){
+	obj_player.phy_speed_x = obj_player.hitWallPunish;
+}

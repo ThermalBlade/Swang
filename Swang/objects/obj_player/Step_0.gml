@@ -22,7 +22,7 @@ else{
 	jPress = 0;
 	delay -= 1;
 }
-	
+
 if(sPress and startNoSpamTimer == false) //Create Web
 {
 	if(!instance_exists(obj_web))
@@ -30,6 +30,27 @@ if(sPress and startNoSpamTimer == false) //Create Web
 		instance_create_depth(x, y, 0, obj_web);
 		startNoSpamTimer = true;
 		whereInSwing = 1;
+	}
+}
+
+if(running == true and delay == 0){
+	var n = 3;
+	var m = 0.2;
+	if(phy_speed_x < n)
+	{
+		phy_speed_x += m;
+		if(phy_speed_x >= n)
+		{
+			phy_speed_x = n;
+		}
+	}
+	else if(phy_speed_x > n)
+	{
+		phy_speed_x -= m;
+		if(phy_speed_x < n)
+		{
+			phy_speed_x = n;
+		}
 	}
 }
 
@@ -129,3 +150,4 @@ if(startNoSpamTimer == true){
 		newRopeTimer = 0;
 	}
 }
+running = false;

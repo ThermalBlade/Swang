@@ -45,5 +45,9 @@ framesToBoost = 8;
 framesToDoubleJump = 10;
 boostTime = 60;
 boosting = false;
+running = false;
+
+delayTime = 90;
+hitWallPunish = 5;
 
 whereInSwing = 0

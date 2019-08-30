@@ -9,4 +9,7 @@ if(obj_player.fuel == 0){
 }
 draw_sprite(spr_fuelBar, currentIndex, 960, 10 + trueYOffset);
 
+currentWaitIndex = floor((1 - (obj_player.delay / obj_player.delayTime)) * 8);
+draw_sprite(spr_waitBar, currentWaitIndex, 960, 10 + trueYOffset);
+
 draw_set_alpha(1);
