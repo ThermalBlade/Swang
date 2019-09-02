@@ -87,6 +87,22 @@
             }
         },
         {
+            "Key": "2688ea74-3fcd-42d2-8cc6-da31b88ae0bd",
+            "Value": {
+                "id": "f2567cfb-89ca-4543-ba60-059ad263e7c2",
+                "resourcePath": "sprites\\spr_jetpack\\spr_jetpack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "270d5c88-b337-4de4-8d22-ba547b6c2fb5",
+            "Value": {
+                "id": "680ee7b4-bbbb-40af-bd25-118ff9264b3a",
+                "resourcePath": "sprites\\spr_jetpackJump\\spr_jetpackJump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "296bd0af-16d8-427e-af6c-2b39dfc730c0",
             "Value": {
                 "id": "bc293aac-9f31-4eb5-b5d4-95f196a6e197",
@@ -308,6 +324,14 @@
                 "id": "652e4f01-991a-440d-9029-6e679a1102e9",
                 "resourcePath": "sprites\\spr_playerRunning2\\spr_playerRunning2.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "71560254-8ed9-4dcc-a5f9-25452557f603",
+            "Value": {
+                "id": "69e22796-0a1e-497f-8125-fb14dab73bc0",
+                "resourcePath": "objects\\obj_jetpack\\obj_jetpack.yy",
+                "resourceType": "GMObject"
             }
         },
         {

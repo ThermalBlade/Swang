@@ -3,6 +3,7 @@
 //physics_world_gravity(0,25)
 depth = -8;
 phy_fixed_rotation = true;
+instance_create_depth(0, 0, -9, obj_jetpack);
 
 swingPress = vk_space
 jumpPress = ord("Z")
