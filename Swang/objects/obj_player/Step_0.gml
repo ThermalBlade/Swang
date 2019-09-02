@@ -36,7 +36,8 @@ if(sPress and startNoSpamTimer == false) //Create Web
 if(running == true and delay == 0){
 	trueRunning = true;
 	var n = 3;
-	var m = 0.2;
+	var m = 0.25;
+	var p = 0.1;
 	if(phy_speed_x < n)
 	{
 		phy_speed_x += m;
@@ -47,7 +48,7 @@ if(running == true and delay == 0){
 	}
 	else if(phy_speed_x > n)
 	{
-		phy_speed_x -= m;
+		phy_speed_x -= p;
 		if(phy_speed_x < n)
 		{
 			phy_speed_x = n;
@@ -79,7 +80,27 @@ if(running == true and delay == 0){
 }
 else if(running == false){
 	trueRunning = false;
-	sprite_index = spr_player;
+	if(delay > 0){
+		sprite_index = spr_playerHit;
+	}
+	else if(instance_exists(obj_web)){
+		sprite_index = spr_playerAiming;
+	}
+	else if(instance_exists(obj_swing)){
+		if(x < obj_swing.atx){
+			sprite_index = spr_playerAiming;
+		}
+		else{
+			sprite_index = spr_playerSwingBack;
+		}
+	}
+	else if(phy_speed_y > 5)
+	{
+		sprite_index = spr_playerFalling;
+	}
+	else{
+		sprite_index = spr_player;
+	}
 }
 
 if(!instance_exists(obj_swing) and jPress and frameCount < framesToBoost and !firstPress and !forceWait) //Jumping and Boosting

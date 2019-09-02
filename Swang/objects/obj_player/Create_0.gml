@@ -1,7 +1,7 @@
 /// @description Initialize Player Variables
 // You can write your code in this editor
 //physics_world_gravity(0,25)
-depth = -10;
+depth = -8;
 phy_fixed_rotation = true;
 
 swingPress = vk_space
@@ -39,7 +39,7 @@ boostFuelLoss = 0.25;
 jumpFuelLoss = 20;
 delay = 0;
 
-framesToBoost = 6;
+framesToBoost = 7;
 boosting = false;
 running = false;
 trueRunning = false;

@@ -2,8 +2,8 @@
 // You can write your code in this editor
 if(obj_player.shPress) //While Holding Space, Draw Line
 {
-	x = obj_player.x
-	y = obj_player.y
+	x = obj_player.x + 2;
+	y = obj_player.y + 2;
 	som  = len
 	it = 0
 	xdiff = x - atx

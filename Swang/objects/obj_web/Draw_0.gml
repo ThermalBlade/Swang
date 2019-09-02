@@ -1,12 +1,15 @@
 /// @description Draw Line Until Space Held
 // You can write your code in this editor
+xCon = obj_player.x + 2;
+yCon = obj_player.y + 2;
+
 rope = sqrt(2 * sqr(length))
 inst = instance_nearest(atx, aty, obj_hookTracker);
 if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 {
 	extentions += 1;
-	x = obj_player.x
-	y = obj_player.y
+	x = xCon;
+	y = yCon;
 	atx = x + length
 	aty = y - length
 	som  = rope
@@ -58,7 +61,7 @@ else //Create Swing Object
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = inst.x;
 		obj_swing.aty = inst.y;
-		rope = point_distance(obj_player.x, obj_player.y, inst.x, inst.y);
+		rope = point_distance(xCon, yCon, inst.x, inst.y);
 		obj_swing.rope = rope;
 	}
 	instance_destroy();

@@ -4,6 +4,7 @@ depth = -1;
 
 snag = 0
 swingPress = obj_player.swingPress
+angle = 0;
 
 obj_player.whereInSwing = 2;
 
