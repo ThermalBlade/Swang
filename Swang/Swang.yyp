@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "358c8c32-56b1-4f26-84dc-7444db22a90f",
+            "Value": {
+                "id": "904eed2a-1208-472d-8197-e3c9c493ddd3",
+                "resourcePath": "sprites\\spr_playerRunning3\\spr_playerRunning3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "381dec9a-e621-4542-8dff-3efa8ea6ed40",
             "Value": {
                 "id": "fdc656f6-b60f-451e-baf5-5f9871691474",
@@ -244,6 +252,14 @@
                 "id": "51f9c039-ea53-4fae-adfd-8b80b3227ca1",
                 "resourcePath": "objects\\obj_modernBackgroundDraw\\obj_modernBackgroundDraw.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5e5cbca9-6252-4f37-868b-c18031f8a2af",
+            "Value": {
+                "id": "8ff490a6-0daf-4b84-acac-b55af3f7b221",
+                "resourcePath": "sprites\\spr_playerFalling\\spr_playerFalling.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -612,14 +628,6 @@
                 "id": "ae70981f-7b4f-4c76-9149-f4a340609cf2",
                 "resourcePath": "objects\\obj_hookable\\obj_hookable.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "f9462298-e098-44db-ab22-41709e217f8a",
-            "Value": {
-                "id": "a8507541-0483-48b1-9d16-ee06072eac56",
-                "resourcePath": "sprites\\spr_playerRunning3\\spr_playerRunning3.yy",
-                "resourceType": "GMSprite"
             }
         }
     ],

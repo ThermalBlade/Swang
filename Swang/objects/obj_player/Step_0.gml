@@ -34,6 +34,7 @@ if(sPress and startNoSpamTimer == false) //Create Web
 }
 
 if(running == true and delay == 0){
+	trueRunning = true;
 	var n = 3;
 	var m = 0.2;
 	if(phy_speed_x < n)
@@ -52,6 +53,33 @@ if(running == true and delay == 0){
 			phy_speed_x = n;
 		}
 	}
+	if(phy_speed_x > n)
+	{
+		runningFrames += phy_speed_x;
+	}
+	else{
+		runningFrames += n;
+	}
+	var incr = 20;
+	if(runningFrames < incr){
+		sprite_index = runningSprites[0];
+	}
+	else if(runningFrames < incr * 2){
+		sprite_index = runningSprites[1];
+	}
+	else if(runningFrames < incr * 3){
+		sprite_index = runningSprites[2];
+	}
+	else if(runningFrames < incr * 4){
+		sprite_index = runningSprites[3];
+	}
+	else{
+		runningFrames = 0;
+	}
+}
+else if(running == false){
+	trueRunning = false;
+	sprite_index = spr_player;
 }
 
 if(!instance_exists(obj_swing) and jPress and frameCount < framesToBoost and !firstPress and !forceWait) //Jumping and Boosting
@@ -64,7 +92,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 	{
 		firstPress = true;
 	}
-	if(frameCount >= framesToBoost and jPress and fuel > 0)
+	if(frameCount >= framesToBoost and jPress and fuel > 0 and !running)
 	{
 		if(momentum > boostSpeed)
 		{

@@ -24,23 +24,42 @@ if(len > rope and snag == 0) //If Rope Snags
 		instance_destroy();
 	}
 }
+else if(obj_player.trueRunning == true and len > rope)
+{
+	snag = 0;
+	momentum = obj_player.phy_speed_x;
+}
 if(snag == 1) //Circular Motion
 {
 	if(obj_player.x < atx)
 	{
 		negCos = cos(angle * (pi / 180))
 		negSin = sin(angle * (pi / 180))
-		obj_player.phy_speed_y = momentum * negCos
-		obj_player.phy_speed_x = momentum * negSin
-		momentum += negSin * obj_player.fallSpeed
+		obj_player.phy_speed_y = momentum * negCos;
+		if(obj_player.trueRunning == false)
+		{
+			obj_player.phy_speed_x = momentum * negSin;
+			momentum += negSin * obj_player.fallSpeed
+		}
+		else
+		{
+			momentum = obj_player.phy_speed_x;
+		}
 	}
 	else if(obj_player.y > aty and momentum > 0)
 	{
 		negCos = cos(angle * (pi / 180))
 		negSin = sin(angle * (pi / 180))
-		obj_player.phy_speed_y = momentum * negCos
-		obj_player.phy_speed_x = momentum * negSin
-		momentum -= negSin * obj_player.fallSpeed
+		obj_player.phy_speed_y = momentum * negCos;
+		if(obj_player.trueRunning == false)
+		{
+			obj_player.phy_speed_x = momentum * negSin;
+			momentum -= negSin * obj_player.fallSpeed;
+		}
+		else
+		{
+			momentum = obj_player.phy_speed_x;
+		}
 	}
 	else
 	{
@@ -52,7 +71,7 @@ else
 	obj_player.phy_speed_y += obj_player.fallSpeed
 }
 
-if(obj_player.jPress and obj_player.running == false)
+if(obj_player.jPress)
 {
 	obj_player.forceWait = true;
 	obj_player.fuel -= pullFuelLoss;

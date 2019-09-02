@@ -22,7 +22,6 @@ frameCount = 0;
 jumpFrameCount = 0;
 firstPress = false;
 jumped = false;
-doubleJumped = false;
 canBoost = true;
 canJump = true;
 canDoubleJump = true;
@@ -36,18 +35,19 @@ image_speed = 1;
 fallSpeed = 0.08;
 boostSpeed = 5;
 jumpSpeed = 5;
-doubleJumpSpeed= 4;
 boostFuelLoss = 0.25;
 jumpFuelLoss = 20;
 delay = 0;
 
-framesToBoost = 8;
-framesToDoubleJump = 10;
-boostTime = 60;
+framesToBoost = 6;
 boosting = false;
 running = false;
+trueRunning = false;
 
 delayTime = 90;
 hitWallPunish = 5;
 
-whereInSwing = 0
+whereInSwing = 0;
+
+runningSprites = [spr_playerRunning1, spr_playerRunning2, spr_playerRunning3, spr_playerRunning4];
+runningFrames = 0;

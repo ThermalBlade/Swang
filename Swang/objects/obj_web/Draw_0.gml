@@ -58,7 +58,8 @@ else //Create Swing Object
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = inst.x;
 		obj_swing.aty = inst.y;
-		obj_swing.rope = rope		
+		rope = point_distance(obj_player.x, obj_player.y, inst.x, inst.y);
+		obj_swing.rope = rope;
 	}
 	instance_destroy();
 }
