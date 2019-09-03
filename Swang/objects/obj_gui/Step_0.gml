@@ -6,6 +6,6 @@ if(yOffset >= 360){
 	yOffset = 0;
 }
 
-if(obj_player.delay > 0){
-	
+if(redAlpha > 0){
+	redAlpha -= 0.025;
 }

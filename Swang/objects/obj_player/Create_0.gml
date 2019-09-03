@@ -3,7 +3,6 @@
 //physics_world_gravity(0,25)
 depth = -8;
 phy_fixed_rotation = true;
-instance_create_depth(0, 0, -9, obj_jetpack);
 
 swingPress = vk_space
 jumpPress = ord("Z")
@@ -40,13 +39,21 @@ boostFuelLoss = 0.25;
 jumpFuelLoss = 20;
 delay = 0;
 
-framesToBoost = 7;
+framesToBoost = 8;
 boosting = false;
 running = false;
 trueRunning = false;
 
+drawJump = false;
+inJumpAnimation = false;
+boostAnimation = false;
+endBoostAnimation = false;
+endingBoostAnimation = false;
+boostFrame = 0;
+jumpFrame = 0;
+
 delayTime = 90;
-hitWallPunish = 5;
+hitWallPunish = 1;
 
 whereInSwing = 0;
 

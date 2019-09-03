@@ -6,7 +6,12 @@ if(instance_exists(obj_web)){
 if(instance_exists(obj_swing)){
 	with(obj_swing){instance_destroy();}
 }
-obj_player.delay = obj_player.delayTime;
+
+var dd = ceil(obj_player.momentum * 14);
+obj_player.delay = dd;
+obj_gui.delayMax = dd;
 if(obj_player.phy_speed_x > obj_player.hitWallPunish){
 	obj_player.phy_speed_x = obj_player.hitWallPunish;
 }
+
+obj_gui.redAlpha = 0.75;

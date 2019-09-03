@@ -327,14 +327,6 @@
             }
         },
         {
-            "Key": "71560254-8ed9-4dcc-a5f9-25452557f603",
-            "Value": {
-                "id": "69e22796-0a1e-497f-8125-fb14dab73bc0",
-                "resourcePath": "objects\\obj_jetpack\\obj_jetpack.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "721b059d-f31b-409d-948c-305695087a99",
             "Value": {
                 "id": "95fa376c-6bf6-40c3-bcc3-0f78b10d442f",
@@ -492,6 +484,14 @@
                 "id": "4daa2d6e-2083-41ed-9794-b86024b226b0",
                 "resourcePath": "objects\\obj_floor\\obj_floor.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "af13f53c-c73d-44c1-b7c3-e4b9f887099f",
+            "Value": {
+                "id": "794b8c20-651a-411c-80a7-272b2fdde3b6",
+                "resourcePath": "sprites\\spr_jetpackBoost\\spr_jetpackBoost.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

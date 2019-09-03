@@ -149,7 +149,7 @@ else if(!instance_exists(obj_swing) and frameCount > 0)
 			{
 				phy_speed_y = -jumpSpeed;
 			}
-			obj_jetpack.jumping = true;
+			drawJump = true;
 			forceWait = true;
 			fuel -= jumpFuelLoss;
 		}

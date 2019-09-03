@@ -54,14 +54,14 @@ else //Create Swing Object
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = x;
 		obj_swing.aty = y;
-		obj_swing.rope = rope
+		obj_swing.rope = rope + 1;
 	}
 	else if(inst != "noone" and instance_exists(inst))
 	{
 		instance_create_depth(0, 0, 0, obj_swing);
 		obj_swing.atx = inst.x;
 		obj_swing.aty = inst.y;
-		rope = point_distance(xCon, yCon, inst.x, inst.y);
+		rope = ceil(point_distance(xCon, yCon, inst.x, inst.y)) + 2;
 		obj_swing.rope = rope;
 	}
 	instance_destroy();
