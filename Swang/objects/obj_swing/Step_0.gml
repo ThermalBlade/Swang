@@ -74,25 +74,15 @@ else
 if(obj_player.jPress)
 {
 	obj_player.forceWait = true;
-	if(obj_player.trueRunning == false)
-	{
-		obj_player.fuel -= pullFuelLoss;
-	}
-	if(snag == 0 and obj_player.trueRunning == false)
+	obj_player.fuel -= pullFuelLoss;
+	if(snag == 0)
 	{
 		rope -= 2;
 	}
 	else
 	{
-		if(obj_player.trueRunning == false)
-		{
-			rope -= 2;
-			obj_player.phy_position_x += (momentum / 2) * negCos
-			obj_player.phy_position_y -= (momentum / 2) * negSin
-		}
-		else
-		{
-			snag = 0;
-		}
+		rope -= 2;
+		obj_player.phy_position_x += (momentum / 2) * negCos;
+		obj_player.phy_position_y -= (momentum / 2) * negSin;
 	}
 }
