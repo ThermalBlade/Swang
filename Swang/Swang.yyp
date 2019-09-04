@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "15f737e6-3091-4109-a436-30e26ce33252",
+            "Value": {
+                "id": "667c5a7a-25ad-4b94-93d9-29c4a97d8654",
+                "resourcePath": "objects\\obj_randomScroll\\obj_randomScroll.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "15fddb3c-136b-4b18-a563-5bc973394078",
             "Value": {
                 "id": "3859b74f-f5b9-4922-8e91-dda2dcad1f83",
@@ -74,7 +82,7 @@
             "Key": "16d72672-6ec9-427a-9871-a792aa11fc92",
             "Value": {
                 "id": "1808c14f-3d44-43bd-a648-e90a47518649",
-                "resourcePath": "sprites\\spr_w1skyline1\\spr_w1skyline1.yy",
+                "resourcePath": "sprites\\spr_w1skyline111\\spr_w1skyline111.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -99,6 +107,14 @@
             "Value": {
                 "id": "680ee7b4-bbbb-40af-bd25-118ff9264b3a",
                 "resourcePath": "sprites\\spr_jetpackJump\\spr_jetpackJump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2730ae20-2137-48a9-b29b-441ead301e57",
+            "Value": {
+                "id": "5073c7c4-0656-4cdb-ae2c-c50c0783b71f",
+                "resourcePath": "sprites\\spr_w1skyline112\\spr_w1skyline112.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -226,7 +242,7 @@
             "Key": "52abb570-b912-40d7-8ad4-2c2e50568617",
             "Value": {
                 "id": "e7b07913-efe5-4084-9be1-f6083bda3ffc",
-                "resourcePath": "objects\\obj_building2\\obj_building2.yy",
+                "resourcePath": "objects\\obj_w1buildingEnd1\\obj_w1buildingEnd1.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -415,10 +431,26 @@
             }
         },
         {
+            "Key": "90018e62-aa3f-4934-9826-dd726b753405",
+            "Value": {
+                "id": "f6ff6d6f-da70-4c66-9317-1eaff2e5e9b4",
+                "resourcePath": "objects\\obj_w1t1building2\\obj_w1t1building2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "901a4934-ae53-4fa6-8997-cf2b711097ca",
             "Value": {
                 "id": "6f662aba-9dd3-466d-b2a3-3d4a34291c01",
-                "resourcePath": "objects\\obj_w1skyline1\\obj_w1skyline1.yy",
+                "resourcePath": "objects\\obj_w1skyline111\\obj_w1skyline111.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "92121b7d-3fc0-4d8a-adb0-0f575d27e667",
+            "Value": {
+                "id": "17e039a2-8ef1-4042-a404-bffe610ae2c6",
+                "resourcePath": "objects\\obj_w1skyline112\\obj_w1skyline112.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -610,7 +642,7 @@
             "Key": "d5434dc7-3118-43ae-94e7-a40165a481c5",
             "Value": {
                 "id": "ba0f9a9f-303b-4c90-b60d-ac70c69375e9",
-                "resourcePath": "objects\\obj_building\\obj_building.yy",
+                "resourcePath": "objects\\obj_w1t1building1\\obj_w1t1building1.yy",
                 "resourceType": "GMObject"
             }
         },

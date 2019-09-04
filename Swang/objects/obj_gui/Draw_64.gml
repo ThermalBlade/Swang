@@ -9,8 +9,6 @@ if(obj_player.fuel == 0){
 }
 draw_sprite(spr_fuelBar, currentIndex, 960, 10 + trueYOffset);
 
-show_debug_message(obj_player.delay)
-show_debug_message(delayMax)
 currentWaitIndex = floor((1 - (obj_player.delay / delayMax)) * 8);
 draw_sprite(spr_waitBar, currentWaitIndex, 960, 10 + trueYOffset);
 

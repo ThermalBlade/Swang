@@ -28,7 +28,7 @@ canDoubleJump = true;
 forceWait = false;
 newRopeTimer = 0;
 startNoSpamTimer = false;
-newRopeTimerMax = 45;
+newRopeTimerMax = 30;
 fuel = 80;
 
 image_speed = 1;
