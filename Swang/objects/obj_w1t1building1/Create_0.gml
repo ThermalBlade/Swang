@@ -3,7 +3,7 @@
 randomize();
 coinFlip = irandom_range(0, 1);
 
-wid = sprite_get_width(spr_w1b12);
+wid = sprite_get_width(spr_w11b12);
 
 depth = 1;
 y = room_height - 5;

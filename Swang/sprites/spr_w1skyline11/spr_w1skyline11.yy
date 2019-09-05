@@ -2,7 +2,7 @@
     "id": "16d72672-6ec9-427a-9871-a792aa11fc92",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_w1skyline111",
+    "name": "spr_w1skyline11",
     "For3D": false,
     "HTile": false,
     "VTile": false,
