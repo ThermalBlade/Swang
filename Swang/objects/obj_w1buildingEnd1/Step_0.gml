@@ -1,6 +1,20 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(obj_player.phy_position_x >= x + 150 and swapped == false){
+
+if(swapped == true and reDid == false){
+	var newXHolder = x + sprite_width + 160;
+	show_debug_message(newXHolder)
+	with(obj_randomScroll){xHolder = newXHolder; event_user(0);}
+	reDid = true;
+	readyForDestroy = true;
+}
+if(readyForDestroy == true){
+	if(obj_player.phy_position_x > 2500){
+		instance_destroy();
+	}
+}
+
+if(obj_player.phy_position_x >= x + 100 and swapped == false){
 	var goBackToPoint = obj_player.phy_position_x - 200;
 	a = instance_create_depth(x - goBackToPoint, y, -1, obj_w1buildingEnd1);
 	a.swapped = true;
@@ -18,8 +32,10 @@ if(obj_player.phy_position_x >= x + 150 and swapped == false){
 		obj_web.atx -= goBackToPoint;
 	}
 	swapped = true;
+	reDid = true;
 	ender = true;
 }
+
 if(ender == true)
 {
 	enderCounter += 1;
