@@ -2,27 +2,22 @@
 // You can write your code in this editor
 
 if(swapped == true and reDid == false){
-	var newXHolder = x + sprite_width + 160;
-	show_debug_message(newXHolder)
-	with(obj_randomScroll){xHolder = newXHolder; event_user(0);}
+	var newXHolder = x + sprite_width + sideWidth + obj_w1randomScroll.blockWidth;
+	with(obj_w1randomScroll){xHolder = newXHolder; event_user(0);}
 	reDid = true;
 	readyForDestroy = true;
 }
 if(readyForDestroy == true){
-	if(obj_player.phy_position_x > 2500){
+	if(obj_player.phy_position_x > 3000){
 		instance_destroy();
 	}
 }
 
 if(obj_player.phy_position_x >= x + 100 and swapped == false){
 	var goBackToPoint = obj_player.phy_position_x - 200;
-	a = instance_create_depth(x - goBackToPoint, y, -1, obj_w1buildingEnd1);
+	a = instance_create_depth(x - goBackToPoint, y, -1, sel);
 	a.swapped = true;
 	with(insta){instance_destroy();}
-	/*for(var i = 0; i < instance_number(obj_building); i ++)
-	{
-		with(instance_find(obj_building, i)){instance_destroy();}
-	}*/
 	with(obj_massBuilding){instance_destroy();}
 	obj_player.phy_position_x -= goBackToPoint;
 	if(instance_exists(obj_swing)){

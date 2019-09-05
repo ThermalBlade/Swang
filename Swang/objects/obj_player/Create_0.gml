@@ -6,16 +6,8 @@ phy_fixed_rotation = true;
 
 swingPress = vk_space
 jumpPress = ord("Z")
-if(!instance_exists(obj_qLearning))
-{
-	sPress = keyboard_check_pressed(swingPress);
-	shPress = keyboard_check(swingPress);
-}
-else
-{
-	sPress = 0
-	shPress = 0
-}
+sPress = keyboard_check_pressed(swingPress);
+shPress = keyboard_check(swingPress);
 restartKey = vk_backspace
 momentum = 0;
 frameCount = 0;
