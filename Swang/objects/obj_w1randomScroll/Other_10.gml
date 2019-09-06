@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+with(obj_w1ground){ds_list_clear(blocks);}
 randomize();
 blockType = irandom_range(0, 0);
 type1 = [obj_w1t1building1, obj_w1t1building2];

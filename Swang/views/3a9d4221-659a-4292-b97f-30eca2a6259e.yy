@@ -10,7 +10,7 @@
         "e384c297-5e9f-427d-a601-92ebbb7e24a9"
     ],
     "filterType": "GMSprite",
-    "folderName": "W1B1",
+    "folderName": "W11B1",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

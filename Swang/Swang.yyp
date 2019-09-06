@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "3c45ff4a-26ca-43d1-aa38-08a2dbc49b77",
+            "Value": {
+                "id": "8fa1fe4f-b9ad-427c-8651-cbc1b9f0ef3a",
+                "resourcePath": "sprites\\spr_w11b3\\spr_w11b3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "43189ad9-465e-45e3-b2ec-13b046eeb559",
             "Value": {
                 "id": "d1aa6617-274d-45e6-9ae1-0a79443c1df4",
@@ -371,6 +379,14 @@
             "Value": {
                 "id": "652e4f01-991a-440d-9029-6e679a1102e9",
                 "resourcePath": "sprites\\spr_playerRunning2\\spr_playerRunning2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6f52636d-e755-43b6-bfa9-0a37b528e92e",
+            "Value": {
+                "id": "029c6eea-dba5-43bf-a60f-1e8cf9c88f2f",
+                "resourcePath": "sprites\\spr_w1sideWalkEndLeft\\spr_w1sideWalkEndLeft.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -562,7 +578,7 @@
             "Key": "abfd463b-9e5b-46a7-ad6b-f47c27139851",
             "Value": {
                 "id": "b68d4f42-670b-4b9f-aa02-e138e84537ef",
-                "resourcePath": "sprites\\spr_w1b2\\spr_w1b2.yy",
+                "resourcePath": "sprites\\spr_w11b2\\spr_w11b2.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -687,6 +703,14 @@
             }
         },
         {
+            "Key": "cf38da18-caa6-4851-855c-d2afadffe29e",
+            "Value": {
+                "id": "bdea5222-b058-43eb-abdc-635b53213702",
+                "resourcePath": "sprites\\spr_w1sideWalkEndRight\\spr_w1sideWalkEndRight.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cf6b0e1c-8dba-44c7-b535-b30ca53f349f",
             "Value": {
                 "id": "addaac92-4e47-4be2-b566-7ffb36b229a3",
@@ -716,6 +740,14 @@
                 "id": "19e1e83f-f727-4388-b861-291cd60659d0",
                 "resourcePath": "rooms\/rm_game\/rm_game.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "d3b42d40-c361-46f8-a710-1fb538713786",
+            "Value": {
+                "id": "d4ec8f1f-3493-4a0d-9107-4b7580f67a4b",
+                "resourcePath": "sprites\\spr_w1street\\spr_w1street.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
