@@ -8,6 +8,6 @@ insta = instance_create_depth(x + 740, y - (sprite_height / 2) + 28, 0, obj_hook
 insta.image_xscale = 4.7;
 insta.image_yscale = (sprite_height / 10) - 5.6;
 
-insta2 = instance_create_depth(x + 94, y - (sprite_height / 2) + 28, 0, obj_hookable);
+insta2 = instance_create_depth(x + 94, y - (sprite_height) + 56 + 15.5, 0, obj_hookable);
 insta2.image_xscale = 69.3;
-insta2.image_yscale = .5;
+insta2.image_yscale = 3.1;
