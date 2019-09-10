@@ -9,7 +9,7 @@ type1Ender = obj_w1buildingEnd1;
 type1EnderWidth = 160;
 
 if(blockType == 0){
-	amountOfBlocks = irandom_range(1, 1);
+	amountOfBlocks = irandom_range(3, 6);
 	for(var i = 0; i < amountOfBlocks; i ++){
 		var totalWidth = 0;
 		with(obj_w1ground){ds_list_add(blocks, obj_w1randomScroll.xHolder);}
