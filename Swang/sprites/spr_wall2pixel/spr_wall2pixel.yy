@@ -2,13 +2,13 @@
     "id": "cf6b0e1c-8dba-44c7-b535-b30ca53f349f",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_wall1pixel",
+    "name": "spr_wall2pixel",
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 0,
+    "bbox_bottom": 1,
     "bbox_left": 0,
-    "bbox_right": 0,
+    "bbox_right": 1,
     "bbox_top": 0,
     "bboxmode": 0,
     "colkind": 1,
@@ -40,7 +40,7 @@
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 1,
+    "height": 2,
     "layers": [
         {
             "id": "2ae9ff06-70e9-41c2-980e-1988c1364dea",
@@ -64,7 +64,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 1,
+    "width": 2,
     "xorig": 0,
     "yorig": 0
 }

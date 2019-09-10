@@ -11,7 +11,7 @@ if(coinFlip == 0)
 {
 	greenSign = instance_create_depth(x + 15, y - 437, -50, obj_w1greenHotelSign);
 	greenSignFloor = instance_create_depth(x + 15, y - 437, -50, obj_w1greenHotelSign1Floor);
-	floorProtectPixel = instance_create_depth(x + 15, y - 436, -50, obj_wall1pixel);
+	floorProtectPixel = instance_create_depth(x + 15, y - 437, -50, obj_wall2pixel);
 }
 else{
 	greenSign = 0;
