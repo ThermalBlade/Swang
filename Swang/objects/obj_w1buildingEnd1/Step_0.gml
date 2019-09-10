@@ -13,7 +13,7 @@ if(readyForDestroy == true){
 	}
 }
 
-if(obj_player.phy_position_x >= x + 100 and swapped == false){
+if(obj_player.phy_position_x >= x and swapped == false){
 	var goBackToPoint = obj_player.phy_position_x - 200;
 	a = instance_create_depth(x - goBackToPoint, y, -1, sel);
 	a.swapped = true;

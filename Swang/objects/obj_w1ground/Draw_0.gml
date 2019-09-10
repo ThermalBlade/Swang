@@ -11,7 +11,7 @@ while(x < ds_list_find_value(blocks, 1)){
 	x += 16;
 }
 
-for(var i = 2; i < ds_list_size(blocks); i++){
+for(var i = 2; i < ds_list_size(blocks) - 2; i++){
 	if(i % 2 != 0 and preBlock == true){
 		sprite_index = spr_w1sideWalkEndRight;
 		x -= 32;
@@ -49,6 +49,10 @@ for(var i = 2; i < ds_list_size(blocks); i++){
 			}
 		}
 	}
+}
+while(x < room_width){
+	draw_self();
+	x += 16;
 }
 
 x = 0;

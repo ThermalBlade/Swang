@@ -3,13 +3,13 @@
 with(obj_w1ground){ds_list_clear(blocks);}
 randomize();
 blockType = irandom_range(0, 0);
-type1 = [obj_w1t1building1, obj_w1t1building2];
-type1Widths = [26, 0];
+type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3];
+type1Widths = [26, 0, 0];
 type1Ender = obj_w1buildingEnd1;
 type1EnderWidth = 160;
 
 if(blockType == 0){
-	amountOfBlocks = irandom_range(4, 6);
+	amountOfBlocks = irandom_range(1, 1);
 	for(var i = 0; i < amountOfBlocks; i ++){
 		var totalWidth = 0;
 		with(obj_w1ground){ds_list_add(blocks, obj_w1randomScroll.xHolder);}
@@ -27,4 +27,6 @@ if(blockType == 0){
 	var newBuilding = type1Ender;
 	var buildingObject = instance_create_depth(xHolder + type1EnderWidth, 0, 0, newBuilding);
 	xHolder += buildingObject.wid;
+	with(obj_w1ground){ds_list_add(blocks, obj_w1randomScroll.xHolder);}
+	with(obj_w1ground){ds_list_add(blocks,room_width);}
 }
