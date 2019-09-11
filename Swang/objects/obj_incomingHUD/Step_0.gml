@@ -1,20 +1,23 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(timer == 0)
+px = obj_player.x;
+py = obj_player.y;
+closestWall = instance_nearest(px, py, obj_wall);
+if(instance_exists(closestWall))
 {
-	x = obj_player.x
-	y = obj_player.y;
-	px = obj_player.x;
-	py = obj_player.y;
-	closestWall = instance_nearest(px, py, obj_wall);
 	wx = closestWall.x;
 	wy = closestWall.y;
-	direction = point_direction(x, y, wx, wy);
-	speed = 5;
+
+	cx = wx - px;
+	cy = wy - py;
+
+	//x = px + (cx / 10);
+	//y = py + (cy / 10);
 }
-timer += 1;
-if(timer == 20){
-	timer = 0;
-}
-	direction = point_direction(x, y, wx, wy);
-	speed = 5;
+camX = camera_get_view_x(view_camera[0]);
+camY = camera_get_view_y(view_camera[0]);
+camW = camera_get_view_width(view_camera[0]);
+camH = camera_get_view_height(view_camera[0]);
+x = camX + obj_view.camWidth;
+y = camY - (obj_view.camWidth * (9/16));
+
