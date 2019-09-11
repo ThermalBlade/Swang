@@ -7,7 +7,7 @@ if(instance_exists(obj_swing)){
 	with(obj_swing){instance_destroy();}
 }
 
-var dd = ceil(obj_player.momentum * 16);
+var dd = ceil((abs(obj_player.phy_speed_x) + abs(obj_player.phy_speed_y)) * 30);
 obj_player.delay = dd;
 obj_gui.delayMax = dd;
 if(obj_player.phy_speed_x > obj_player.hitWallPunish){

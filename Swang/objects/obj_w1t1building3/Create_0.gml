@@ -11,3 +11,11 @@ insta.image_yscale = (sprite_height / 10) - 5.6;
 insta2 = instance_create_depth(x + 94, y - (sprite_height) + 56 + 15.5, 0, obj_hookable);
 insta2.image_xscale = 69.3;
 insta2.image_yscale = 3.1;
+
+insta3 = instance_create_depth(x + 149, y - (sprite_height) + 250 + 8, 0, obj_hookable);
+insta3.image_xscale = 12.4;
+insta3.image_yscale = 1.6;
+
+theHazard = instance_create_depth(x + 149, y - sprite_height + 250, -50, obj_w1b3hazard);
+theHazardFloor = instance_create_depth(x + 149, y - sprite_height + 250, -50, obj_w1b3hazardFloor);
+floorProtectPixel = instance_create_depth(x + 149, y - sprite_height + 250, -50, obj_wall2pixel);
