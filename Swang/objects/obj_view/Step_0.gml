@@ -35,9 +35,9 @@ else if(offsetForWeb == true)
 	offsetForWeb = false;
 }
 
-x = obj_player.x;
+x = obj_player.x + playerXOffset;
 y = obj_player.phy_position_y - playerYOffset + yOffset;
-camera_set_view_pos(view_camera[0], x - 30, y - 200);
+//camera_set_view_pos(view_camera[0], x - 30, y - 200);
 
 if(instance_exists(obj_web) and offsetForWeb) //Look upward, shooting web
 {
