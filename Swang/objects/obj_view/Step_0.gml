@@ -35,13 +35,17 @@ else if(offsetForWeb == true)
 	offsetForWeb = false;
 }
 
-n = camera_get_view_x(view_camera[0]);
+x = obj_player.x - 22;
+y = obj_player.phy_position_y + yOffset - (camera_get_view_height(view_camera[0]) / 2);
+var checkMaxY = y + camera_get_view_height(view_camera[0]);
+if(checkMaxY > room_height){
+	y = room_height - camera_get_view_height(view_camera[0]);
+}
+else if (y < 0){
+	y = 0;
+}
+camera_set_view_pos(view_camera[0], x, y);
 
-x = obj_player.x// + playerXOffset;
-y = obj_player.phy_position_y// - playerYOffset + yOffset;
-camera_set_view_pos(view_camera[0], x - 30, y - 200);
-show_debug_message(x)
-show_debug_message(camera_get_view_x(view_camera[0]))
 
 if(instance_exists(obj_web) and offsetForWeb) //Look upward, shooting web
 {

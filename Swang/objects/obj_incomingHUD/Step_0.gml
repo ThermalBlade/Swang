@@ -14,13 +14,3 @@ if(instance_exists(closestWall))
 	x = px + (cx / 10);
 	y = py + (cy / 10);
 }
-camX = camera_get_view_x(view_camera[0]);
-camY = camera_get_view_y(view_camera[0]);
-camW = camera_get_view_width(view_camera[0]);
-camH = camera_get_view_height(view_camera[0]);
-x = camX + camW;
-y = camY + 200 + obj_view.playerYOffset;
-
-//show_debug_message(camY + 200)
-//show_debug_message(obj_view.y)
-
