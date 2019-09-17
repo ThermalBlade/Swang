@@ -2,7 +2,8 @@
 // You can write your code in this editor
 var px = obj_player.x;
 var py = obj_player.y;
-closestWall = instance_nearest(px, py, obj_wall);
+//closestWall = instance_nearest(px, py, obj_wall);
+closestWall = instance_nth_nearest(px, py, obj_wall, 0);
 if(instance_exists(closestWall))
 {
 	var closex = closestWall.x + (closestWall.sprite_width / 2);
@@ -14,19 +15,21 @@ if(instance_exists(closestWall))
 	var bx = camX + camW;
 	var maxY = camY + camH;
 	var minY = camY;
-	var rr = ((closey - py)/(closex - px));
-	var yCheck = (rr * bx) + py;
+	var yy = (camY + (camH / 2));
+	var rr = (closey - yy)/(closex - px);
+	var yOffset = yy - rr * px;
+	var yCheck = (rr * bx) + yOffset;
 	
 	if(yCheck < maxY and yCheck > minY and  px < closex){
 		x = bx - 10;
 		y = yCheck;
 	}
 	else if(yCheck < minY and px < closex){
-		x = (minY/rr) - (py/rr);
+		x = (minY/rr) - (yOffset/rr);
 		y = minY + 10;
 	}
 	else if(yCheck > maxY and px < closex){
-		x = (minY/rr) - (py/rr);
+		x = (maxY/rr) - (yOffset/rr);
 		y = maxY - 10;
 	}
 	else{
