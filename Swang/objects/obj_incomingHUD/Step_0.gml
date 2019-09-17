@@ -21,6 +21,6 @@ camH = camera_get_view_height(view_camera[0]);
 x = camX + camW;
 y = camY + 200 + obj_view.playerYOffset;
 
-show_debug_message(camY + 200)
-show_debug_message(obj_view.y)
+//show_debug_message(camY + 200)
+//show_debug_message(obj_view.y)
 
