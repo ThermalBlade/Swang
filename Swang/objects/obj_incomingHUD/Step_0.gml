@@ -8,6 +8,7 @@ var closestWall;
 var closex;
 var closey;
 var pd;
+//show_debug_message("------")
 
 while(checks < 3){
 	i += 1;
@@ -23,16 +24,17 @@ while(checks < 3){
 	while(px > closex){
 		i += 1;
 		closestWall = instance_nth_nearest(px, py, obj_wall, i);
-		show_debug_message(closestWall)
 		if(closestWall != noone){
 			closex = closestWall.x + (closestWall.sprite_width / 2);
 			closey = closestWall.y + (closestWall.sprite_height / 2);
 			pd = point_distance(px, py, closex, closey);
 		}
 		else{
+			show_debug_message(closestWall)
 			closex = room_width;
 		}
 	}
+	//show_debug_message(closestWall);
 	if(closestWall != noone)
 	{
 		var camX = camera_get_view_x(view_camera[0]);
