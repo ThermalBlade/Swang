@@ -8,7 +8,6 @@ var closestWall;
 var closex;
 var closey;
 var pd;
-//show_debug_message("------")
 
 while(checks < 3){
 	i += 1;
@@ -21,7 +20,7 @@ while(checks < 3){
 	else{
 		closex = room_width;
 	}
-	while(px > closex){
+	while(px > closex and i < instance_number(obj_wall) - 1){
 		i += 1;
 		closestWall = instance_nth_nearest(px, py, obj_wall, i);
 		if(closestWall != noone){
