@@ -47,6 +47,7 @@ while(checks < 3){
 		var rr = (closey - yy)/(closex - px);
 		var yOffset = yy - rr * px;
 		var yCheck = (rr * bx) + yOffset;
+		var dd = point_distance(px, yy, closex, closey);
 	
 		if(yCheck < maxY and yCheck > minY and  px < closex){
 			x = bx;
@@ -66,7 +67,7 @@ while(checks < 3){
 		}
 		xs[checks] = x;
 		ys[checks] = y;
-		ds[checks] = pd;
+		ds[checks] = dd;
 	}
 	else{
 		xs[checks] = -999;
