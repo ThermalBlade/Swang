@@ -4,5 +4,4 @@ with(insta){instance_destroy();}
 if(greenSign != 0){
 	with(greenSign){instance_destroy();}
 	with(greenSignFloor){instance_destroy();}
-	with(floorProtectPixel){instance_destroy();}
 }

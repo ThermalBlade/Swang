@@ -8,8 +8,8 @@ else{
 }
 
 if(theHazardFloor.phy_active == true){
-	floorProtectPixel.phy_active = false;
+	theHazard.phy_active = false;
 }
 else{
-	floorProtectPixel.phy_active = true;
+	theHazard.phy_active = true;
 }
