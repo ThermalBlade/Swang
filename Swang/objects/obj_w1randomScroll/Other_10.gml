@@ -3,8 +3,8 @@
 with(obj_w1ground){ds_list_clear(blocks);}
 randomize();
 blockType = irandom_range(0, 0);
-type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3];
-type1Widths = [26, 0, 0];
+type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3, obj_w1t1building4];
+type1Widths = [26, 0, 0, 50];
 type1Ender = obj_w1buildingEnd1;
 type1EnderWidth = 160;
 
