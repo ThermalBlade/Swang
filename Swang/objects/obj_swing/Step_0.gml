@@ -19,7 +19,7 @@ if(len > rope and snag == 0) //If Rope Snags
 		snag = 1;
 		momentum = obj_player.phy_speed_x;
 	}
-	else
+	else if(px >= atx and py < aty)
 	{
 		instance_destroy();
 	}

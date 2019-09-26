@@ -58,11 +58,15 @@ else //Create Swing Object
 	}
 	else if(inst != "noone" and instance_exists(inst))
 	{
-		instance_create_depth(0, 0, 0, obj_swing);
-		obj_swing.atx = inst.x;
-		obj_swing.aty = inst.y;
-		rope = ceil(point_distance(xCon, yCon, inst.x, inst.y)) + 2;
-		obj_swing.rope = rope;
+		var pd = abs(point_distance(x, y, inst.x, inst.y));
+		var r = abs(ceil(point_distance(xCon, yCon, x, y)));
+		if(pd < closeSnap + r){
+			instance_create_depth(0, 0, 0, obj_swing);
+			obj_swing.atx = inst.x;
+			obj_swing.aty = inst.y;
+			rope = abs(ceil(point_distance(xCon, yCon, inst.x, inst.y))) + 2;
+			obj_swing.rope = rope;
+		}
 	}
 	instance_destroy();
 }

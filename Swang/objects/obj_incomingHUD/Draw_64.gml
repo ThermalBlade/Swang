@@ -25,7 +25,6 @@ for(var i = 0; i < checkers; i ++){
 		else{
 			draw_set_alpha(0)
 		}
-		show_debug_message(dos)
 		draw_sprite(spr_incomingRedHUD, 0, xGui, yGui);
 		draw_set_alpha(1);
 	}
