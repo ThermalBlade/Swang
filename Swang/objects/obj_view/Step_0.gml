@@ -51,7 +51,7 @@ if(instance_exists(obj_web) and offsetForWeb) //Look upward, shooting web
 {
 	if(yOffset > -shortWebCutoff)
 	{
-		yOffset -= 4;
+		yOffset -= 6;
 	}
 	else if(yOffset > -maxWebCutoff)
 	{

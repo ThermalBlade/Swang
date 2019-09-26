@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if(swapped == true and reDid == false){
-	var newXHolder = x + sprite_width + sideWidth + obj_w1randomScroll.blockWidth;
+	var newXHolder = x + sprite_width + sideWidth + obj_w1randomScroll.roadWidth;
 	with(obj_w1randomScroll){xHolder = newXHolder; event_user(0);}
 	reDid = true;
 	readyForDestroy = true;
