@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "e7bbb9bf-a2cd-44e1-a938-02df4860ba4e",
+            "Value": {
+                "id": "09d3e8a4-c342-44f4-bcc7-b4fb0dba7678",
+                "resourcePath": "sprites\\spr_blackSquare\\spr_blackSquare.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ed6d8c4a-41b3-4bff-972c-9d106a623df0",
             "Value": {
                 "id": "22a70d62-9f23-4989-ac9f-dcea3be1744d",

@@ -1,11 +1,11 @@
 /// @description Insert description hee
 // You can write your code in this editor
-topColor = make_color_rgb(67, 122, 193);
-middleColor2 = make_color_rgb(183, 210, 230);
-middleColor = make_color_rgb(255, 236, 110);
-bottomColor = make_color_rgb(255, 169, 38);
-bottomReach = 1.1;
-middleReach = 1.2;
+topColor = make_color_rgb(31, 35, 141);
+middleColor2 = make_color_rgb(53, 56, 144);
+middleColor = make_color_rgb(133, 92, 238); //Light purple
+bottomColor = make_color_rgb(251, 230, 58); //Yellow
+bottomReach = 1.5;
+middleReach = 3;
 /*vc = view_camera[0];
 cx = camera_get_view_x(vc);
 cw = camera_get_view_width(vc);
