@@ -2,7 +2,7 @@
     "id": "5e7d9b36-1dc6-47a3-ad5b-65283f77f1c8",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sprite44",
+    "name": "spr_tree",
     "For3D": false,
     "HTile": false,
     "VTile": false,
@@ -54,7 +54,7 @@
             "visible": true
         }
     ],
-    "origin": 0,
+    "origin": 6,
     "originLocked": false,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
@@ -66,5 +66,5 @@
     "type": 0,
     "width": 32,
     "xorig": 0,
-    "yorig": 0
+    "yorig": 31
 }
