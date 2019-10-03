@@ -3,7 +3,6 @@
 var m = 1000;
 var adjuster = (abs((camera_get_view_width(view_camera[0]) - 420)) * 2);
 var madjuster = min(m, adjuster);
-show_debug_message(madjuster)
 bottom = room_height;
 top = 0 - m + madjuster;
 

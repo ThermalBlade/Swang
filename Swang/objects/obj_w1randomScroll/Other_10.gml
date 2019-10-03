@@ -1,6 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-with(obj_w1ground){ds_list_clear(blocks);}
+with(obj_w1ground){
+	if(ds_list_size(blocks) > 2){ //If not first run through
+		for(var i = 0; i < ds_list_size(treeXs); i ++){
+			
+		}
+	}
+}
+with(obj_w1ground){ds_list_clear(blocks); ds_list_clear(treeXs); started = 1;}
 randomize();
 blockType = irandom_range(0, 0);
 type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3, obj_w1t1building4];
