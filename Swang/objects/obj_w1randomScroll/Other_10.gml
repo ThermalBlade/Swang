@@ -1,13 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-with(obj_w1ground){
-	if(ds_list_size(blocks) > 2){ //If not first run through
-		for(var i = 0; i < ds_list_size(treeXs); i ++){
-			
-		}
-	}
+while(x < 0){
+	x += 16;
 }
-with(obj_w1ground){ds_list_clear(blocks); ds_list_clear(treeXs); started = 1;}
+with(obj_w1ground){ds_list_clear(blocks); ds_list_clear(treeXs);  xStart = obj_w1randomScroll.x; started = 1;}
 randomize();
 blockType = irandom_range(0, 0);
 type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3, obj_w1t1building4];
@@ -16,7 +12,7 @@ type1Ender = obj_w1buildingEnd1;
 type1EnderWidth = 160;
 
 if(blockType == 0){
-	amountOfBlocks = irandom_range(3, 6);
+	amountOfBlocks = irandom_range(blockRangeLow, blockRangeHigh);
 	for(var i = 0; i < amountOfBlocks; i ++){
 		var totalWidth = 0;
 		with(obj_w1ground){ds_list_add(blocks, obj_w1randomScroll.xHolder);}

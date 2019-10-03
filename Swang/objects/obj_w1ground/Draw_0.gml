@@ -8,8 +8,10 @@ x = 0;*/
 
 randomize();
 
+x = xStart;
+
 if(started){
-	var xHolder = 0;
+	var xHolder = xStart;
 	var addObject;
 	while(xHolder < ds_list_find_value(blocks, 1)){
 		tree = irandom_range(0, foregroundObjectRange);
@@ -61,7 +63,7 @@ if(started){
 		}
 		xHolder += 16;
 	}
-	instance_create_depth(0, 0, -500, obj_w1trees);
+	if(!instance_exists(obj_w1trees)){instance_create_depth(0, 0, -500, obj_w1trees);}
 	with(obj_w1trees){
 		treeXs = obj_w1ground.treeXs;
 	}
@@ -116,5 +118,3 @@ while(x < room_width){
 	draw_self();
 	x += 16;
 }
-
-x = 0;

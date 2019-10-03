@@ -11,3 +11,5 @@ preBlock = true;
 started = true;
 
 foregroundObjectRange = 10;
+
+xStart = 0;

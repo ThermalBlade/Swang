@@ -15,7 +15,7 @@ if(reset == 1)
 while(x < room_width){
 	if(ds_list_find_index(treeXs, x) != -1){
 		sprite_index = spr_tree;
-		draw_self();
+		//draw_self();
 	}
 	x += 16;
 }

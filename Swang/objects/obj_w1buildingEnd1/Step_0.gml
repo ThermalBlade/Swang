@@ -2,8 +2,9 @@
 // You can write your code in this editor
 
 if(swapped == true and reDid == false){
+	var b = goBackToPoint
 	var newXHolder = x + sprite_width + sideWidth + obj_w1randomScroll.roadWidth;
-	with(obj_w1randomScroll){xHolder = newXHolder; event_user(0);}
+	with(obj_w1randomScroll){xHolder = newXHolder;  x -= b; event_user(0);}
 	reDid = true;
 	readyForDestroy = true;
 }
@@ -14,9 +15,10 @@ if(readyForDestroy == true){
 }
 
 if(obj_player.phy_position_x >= x and swapped == false){
-	var goBackToPoint = obj_player.phy_position_x - 200;
+	goBackToPoint = obj_player.phy_position_x - 200;
 	a = instance_create_depth(x - goBackToPoint, y, -1, sel);
 	a.swapped = true;
+	a.goBackToPoint = goBackToPoint;
 	with(insta){instance_destroy();}
 	with(obj_massBuilding){instance_destroy();}
 	obj_player.phy_position_x -= goBackToPoint;

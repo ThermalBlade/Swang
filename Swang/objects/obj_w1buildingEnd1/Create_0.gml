@@ -17,3 +17,5 @@ swapped = false;
 ender = false;
 readyForDestroy = false;
 enderCounter = 0;
+
+goBackToPoint = 0;
