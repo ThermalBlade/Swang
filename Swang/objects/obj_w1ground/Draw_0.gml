@@ -15,12 +15,11 @@ if(started){
 		tree = irandom_range(0, foregroundObjectRange);
 		if(tree == 0){
 			addObject = true;
+			ds_list_add(treeXs, xHolder);
 		}
 		else{
 			addObject = false;
 		}
-		ds_list_add(trees, addObject);
-		ds_list_add(treeXs, xHolder);
 		xHolder += 16;
 	}
 
@@ -34,12 +33,11 @@ if(started){
 				tree = irandom_range(0, foregroundObjectRange);
 				if(tree == 0){
 					addObject = true;
+					ds_list_add(treeXs, xHolder);
 				}
 				else{
 					addObject = false;
 				}
-				ds_list_add(trees, addObject);
-				ds_list_add(treeXs, xHolder);
 				xHolder += 16;
 				postBlock = true;
 			}
@@ -56,13 +54,16 @@ if(started){
 		tree = irandom_range(0, foregroundObjectRange);
 		if(tree == 0){
 			addObject = true;
+			ds_list_add(treeXs, xHolder);
 		}
 		else{
 			addObject = false;
 		}
-		ds_list_add(trees, addObject);
-		ds_list_add(treeXs, xHolder);
 		xHolder += 16;
+	}
+	instance_create_depth(0, 0, -500, obj_w1trees);
+	with(obj_w1trees){
+		treeXs = obj_w1ground.treeXs;
 	}
 	started = false;
 }
@@ -89,9 +90,7 @@ for(var i = 2; i < ds_list_size(blocks) - 2; i++){
 			sprite_index = spr_w1sideWalk;
 			draw_self();
 			x += 16;
-			postBlock = true;
-			
-			if(x 
+			postBlock = true;	
 		}
 		else{ //Drawing street
 			sprite_index = spr_w1street;
