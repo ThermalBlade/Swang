@@ -14,6 +14,7 @@ if(reset == 1)
 }
 while(x < room_width){
 	if(ds_list_find_index(treeXs, x) != -1){
+		//image_index = irandom_range(0, 1);
 		sprite_index = spr_tree;
 		draw_self();
 	}
