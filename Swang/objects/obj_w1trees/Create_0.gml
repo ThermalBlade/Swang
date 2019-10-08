@@ -4,7 +4,7 @@ y = room_height - 1;
 x = 0;
 depth = -500;
 image_speed = 0;
-image_index = 1;
+image_index = 0;
 
 treeXs = ds_list_create();
 

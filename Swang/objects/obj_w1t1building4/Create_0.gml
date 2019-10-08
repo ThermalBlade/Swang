@@ -4,7 +4,7 @@ image_speed = 0;
 image_index = 0;
 
 depth = 1;
-y = room_height - 4;
+y = room_height - 5;
 
 //Unique Features
 wid = sprite_width + 100;
