@@ -11,7 +11,20 @@ randomize();
 x = xStart;
 
 if(started){
-	var xHolder = xStart;
+	if(ds_list_size(treeXs) > 0){
+		for(i = 0; i < ds_list_size(treeXs); i ++){
+			if(ds_list_find_value(treeXs, i) < 0){
+				ds_list_delete(treeXs, i);
+			}
+			else if(ds_list_find_value(treeXs, i) > obj_player.x + 2000){
+				ds_list_delete(treeXs, i);
+			}
+		}
+		xHolder = obj_player.x + 2010;
+	}
+	else{
+		xHolder = xStart;
+	}
 	var addObject;
 	while(xHolder < ds_list_find_value(blocks, 1)){
 		tree = irandom_range(0, foregroundObjectRange);

@@ -12,13 +12,10 @@ if(reset == 1)
 {
 	
 }
-while(x < room_width){
-	if(ds_list_find_index(treeXs, x) != -1){
-		//image_index = irandom_range(0, 1);
-		sprite_index = spr_tree;
-		draw_self();
-	}
-	x += 16;
+for(i = 0; i < ds_list_size(treeXs); i ++){
+	x = ds_list_find_value(treeXs, i);
+	sprite_index = spr_tree;
+	draw_self();
 }
 
 x = 0;

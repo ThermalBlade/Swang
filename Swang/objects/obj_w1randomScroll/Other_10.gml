@@ -1,9 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 while(x < 0){
 	x += 16;
 }
-with(obj_w1ground){ds_list_clear(blocks); ds_list_clear(treeXs);  xStart = obj_w1randomScroll.x; started = 1;}
+with(obj_w1ground){
+	ds_list_clear(blocks); 
+	xStart = obj_w1randomScroll.x; 
+	started = 1;
+}
 randomize();
 blockType = irandom_range(0, 0);
 type1 = [obj_w1t1building1, obj_w1t1building2, obj_w1t1building3, obj_w1t1building4];
