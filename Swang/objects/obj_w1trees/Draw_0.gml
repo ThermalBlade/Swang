@@ -12,9 +12,15 @@ if(reset == 1)
 {
 	
 }
-for(i = 0; i < ds_list_size(treeXs); i ++){
+/*for(i = 0; i < ds_list_size(treeXs); i ++){
 	x = ds_list_find_value(treeXs, i);
 	sprite_index = spr_tree;
+	image_index = ds_list_find_value(treeIndexs, i);
+	draw_self();
+}*/
+for(i = 0; i < ds_list_size(lampXs); i ++){
+	x = ds_list_find_value(lampXs, i);
+	sprite_index = spr_lamp;
 	draw_self();
 }
 

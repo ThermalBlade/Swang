@@ -4,12 +4,8 @@
 if(swapped == true and reDid == false){
 	var b = goBackToPoint
 	var newXHolder = x + sprite_width + sideWidth + obj_w1randomScroll.roadWidth;
+	with(obj_w1ground){goBackToPoint = b;}
 	with(obj_w1randomScroll){xHolder = newXHolder;  x -= b; event_user(0);}
-	with(obj_w1trees){
-		for(i = 0; i < ds_list_size(treeXs); i ++){
-			ds_list_replace(treeXs, i, ds_list_find_value(treeXs, i) - b);
-		}
-	}
 	reDid = true;
 	readyForDestroy = true;
 }

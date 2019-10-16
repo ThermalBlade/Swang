@@ -7,5 +7,7 @@ image_speed = 0;
 image_index = 0;
 
 treeXs = ds_list_create();
+treeIndexs = ds_list_create();
+lampXs = ds_list_create();
 
 reset = 0;

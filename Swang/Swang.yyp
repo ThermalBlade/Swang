@@ -855,6 +855,14 @@
             }
         },
         {
+            "Key": "d265d5c5-723f-4eff-9e74-1139f479ae42",
+            "Value": {
+                "id": "8d9a9a3d-89a6-415b-a802-cefbbfea6c8f",
+                "resourcePath": "sprites\\spr_lamp\\spr_lamp.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d35465ca-98ff-4f93-b234-832e067f0c52",
             "Value": {
                 "id": "fbcd16e2-3cd4-483e-890f-a261ed8b4639",
