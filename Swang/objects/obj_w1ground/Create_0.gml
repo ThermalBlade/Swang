@@ -7,9 +7,15 @@ blocks = ds_list_create();
 
 treeXs = ds_list_create();
 treeIndexs = ds_list_create();
+treeIndex = sprite_get_number(spr_tree);
+groupTreeMin = 10;
+groupTreeMax = 30;
+howOftenGroupTrees = 55; //In percent
+maxTreesInGroup = 6;
+treeGroupSep = 16;
 
 lampXs = ds_list_create();
-lampSep = 220;
+lampSep = 320;
 
 postBlock = false;
 preBlock = true;

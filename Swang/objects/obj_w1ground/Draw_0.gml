@@ -11,21 +11,24 @@ randomize();
 x = xStart;
 
 if(started){
+	//LAMPS
 	if(ds_list_size(lampXs) > 0){
+		ds_list_sort(lampXs, true);
 		for(i = 0; i < ds_list_size(lampXs); i ++){
 			ds_list_replace(lampXs, i, ds_list_find_value(lampXs, i) - goBackToPoint);
 		}
 		for(i = 0; i < ds_list_size(lampXs); i ++){
 			if(ds_list_find_value(lampXs, i) < 0){
 				ds_list_delete(lampXs, i);
-				ds_list_delete(lampXs, i);
+				i -= 1;
 			}
 			else if(ds_list_find_value(lampXs, i) > obj_player.x + 2000){
 				ds_list_delete(lampXs, i);
-				ds_list_delete(lampXs, i);
+				i -= 1;
 			}
 		}
-		xHolder = obj_player.x + 2000 + lampSep;
+		ds_list_sort(lampXs, true);
+		xHolder = ds_list_find_value(lampXs, ds_list_size(lampXs) - 1) + lampSep;
 	}
 	else{
 		xHolder = xStart;
@@ -62,35 +65,48 @@ if(started){
 	with(obj_w1trees){
 		lampXs = obj_w1ground.lampXs;
 	}
-	started = false;
-	/*if(ds_list_size(treeXs) > 0){
+
+	//TREES
+	if(ds_list_size(treeXs) > 0){
+		ds_list_sort(treeXs, true);
+		for(i = 0; i < ds_list_size(treeXs); i ++){
+			ds_list_replace(treeXs, i, ds_list_find_value(treeXs, i) - goBackToPoint);
+		}
 		for(i = 0; i < ds_list_size(treeXs); i ++){
 			if(ds_list_find_value(treeXs, i) < 0){
 				ds_list_delete(treeXs, i);
 				ds_list_delete(treeIndexs, i);
+				i -= 1;
 			}
 			else if(ds_list_find_value(treeXs, i) > obj_player.x + 2000){
 				ds_list_delete(treeXs, i);
 				ds_list_delete(treeIndexs, i);
+				i -= 1;
 			}
 		}
-		xHolder = obj_player.x + 2010;
+		ds_list_sort(treeXs, true);
+		xHolder = ds_list_find_value(treeXs, ds_list_size(treeXs) - 1) + 60;
 	}
 	else{
 		xHolder = xStart;
 	}
 	var addObject;
+	var keepAddObject;
+	var treeCount;
 	while(xHolder < ds_list_find_value(blocks, 1)){
-		tree = irandom_range(0, foregroundObjectRange);
-		if(tree == 0){
-			addObject = true;
-			ds_list_add(treeXs, xHolder);
-			ds_list_add(treeIndexs, irandom_range(0, 5));
+		addObject = irandom_range(0, foregroundObjectRange);
+		if(addObject == 0){
+			keepAddObject = 0;
+			treeCount = 0;
+			while(keepAddObject <= howOftenGroupTrees and treeCount < maxTreesInGroup){
+				ds_list_add(treeXs, xHolder);
+				ds_list_add(treeIndexs, irandom_range(0, treeIndex));
+				treeCount += 1;
+				xHolder += irandom_range(groupTreeMin, groupTreeMax);
+				keepAddObject = irandom_range(0, 100)
+			}
 		}
-		else{
-			addObject = false;
-		}
-		xHolder += 16;
+		xHolder += treeGroupSep;
 	}
 
 	for(var i = 2; i < ds_list_size(blocks) - 2; i++){
@@ -100,16 +116,19 @@ if(started){
 		while(xHolder < ds_list_find_value(blocks, i))
 		{
 			if(i % 2 != 0){ //Drawing sidewalk
-				tree = irandom_range(0, foregroundObjectRange);
-				if(tree == 0){
-					addObject = true;
-					ds_list_add(treeXs, xHolder);
-					ds_list_add(treeIndexs, irandom_range(0, 5));
+				addObject = irandom_range(0, foregroundObjectRange);
+				if(addObject == 0){
+					keepAddObject = 0;
+					treeCount = 0;
+					while(keepAddObject <= howOftenGroupTrees and treeCount < maxTreesInGroup){
+						ds_list_add(treeXs, xHolder);
+						ds_list_add(treeIndexs, irandom_range(0, treeIndex));
+						treeCount += 1;
+						xHolder += irandom_range(groupTreeMin, groupTreeMax);
+						keepAddObject = irandom_range(0, 100)
+					}
 				}
-				else{
-					addObject = false;
-				}
-				xHolder += 16;
+				xHolder += treeGroupSep;
 				postBlock = true;
 			}
 			else{ //Drawing street
@@ -122,23 +141,26 @@ if(started){
 		}
 	}
 	while(xHolder < room_width){
-		tree = irandom_range(0, foregroundObjectRange);
-		if(tree == 0){
-			addObject = true;
-			ds_list_add(treeXs, xHolder);
-			ds_list_add(treeIndexs, irandom_range(0, 5));
+		addObject = irandom_range(0, foregroundObjectRange);
+		if(addObject == 0){
+			keepAddObject = 0;
+			treeCount = 0;
+			while(keepAddObject <= howOftenGroupTrees and treeCount < maxTreesInGroup){
+				ds_list_add(treeXs, xHolder);
+				ds_list_add(treeIndexs, irandom_range(0, treeIndex));
+				treeCount += 1;
+				xHolder += irandom_range(groupTreeMin, groupTreeMax);
+				keepAddObject = irandom_range(0, 100)
+			}
 		}
-		else{
-			addObject = false;
-		}
-		xHolder += 16;
+		xHolder += treeGroupSep;
 	}
 	if(!instance_exists(obj_w1trees)){instance_create_depth(0, 0, -500, obj_w1trees);}
 	with(obj_w1trees){
 		treeXs = obj_w1ground.treeXs;
 		treeIndexs = obj_w1ground.treeIndexs;
 	}
-	started = false;*/
+	started = false;
 }
 
 while(x < ds_list_find_value(blocks, 1)){
