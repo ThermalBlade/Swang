@@ -17,4 +17,4 @@ insta3.image_xscale = 12.4;
 insta3.image_yscale = 1.6;
 
 theHazard = instance_create_depth(x + 149, y - sprite_height + 250, -50, obj_w1b3hazard);
-theHazardFloor = instance_create_depth(x + 149, y - sprite_height + 250, -50, obj_w1b3hazardFloor);
+theHazardFloor = instance_create_depth(x + 149, y - sprite_height + 250 + 2, -50, obj_w1b3hazardFloor);

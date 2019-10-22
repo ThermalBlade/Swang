@@ -10,7 +10,7 @@ coinFlip = irandom_range(0, 1);
 if(coinFlip == 0)
 {
 	greenSign = instance_create_depth(x + 15, y - 437, -50, obj_w1greenHotelSign);
-	greenSignFloor = instance_create_depth(x + 15, y - 437, -50, obj_w1greenHotelSign1Floor);
+	greenSignFloor = instance_create_depth(x + 15, y - 437 + 2, -50, obj_w1greenHotelSign1Floor);
 }
 else{
 	greenSign = 0;
