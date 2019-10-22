@@ -173,7 +173,6 @@ else
 	firstPress = false;
 }
 
-show_debug_message(forceWait);
 if(forceWait == true and !jPress) //Force new click for jump/boost
 {
 	forceWait = false;

@@ -5,7 +5,7 @@ xdiff = atx - obj_player.x
 ydiff = aty - obj_player.y
 len = sqrt(sqr(xdiff) + sqr(ydiff))
 obj_player.fuel += swingFuelGain;
-if(len > rope and snag == 0) //If Rope Snags
+if(len > rope and snag == 0 and !goingUp) //If Rope Snags
 {
 	var px = obj_player.x
 	var py = obj_player.y
@@ -24,12 +24,20 @@ if(len > rope and snag == 0) //If Rope Snags
 		instance_destroy();
 	}
 }
-else if(obj_player.trueRunning == true and len > rope)
+else if(obj_player.trueRunning == true and len > rope and !goingUp)
 {
 	snag = 0;
 	momentum = obj_player.phy_speed_x;
 }
-if(snag == 1) //Circular Motion
+
+if(goingUp){
+	if(!obj_player.jPress or obj_player.x > atx ){
+		instance_destroy();
+	}
+	obj_player.phy_speed_x = 10 * xAngle;
+	obj_player.phy_speed_y = 10 * yAngle * yjuster;
+}
+else if(snag == 1) //Circular Motion
 {
 	if(obj_player.x < atx)
 	{
@@ -66,13 +74,20 @@ if(snag == 1) //Circular Motion
 		instance_destroy();
 	}
 }
-else
+else if(!goingUp)
 {
 	obj_player.phy_speed_y += obj_player.fallSpeed
 }
 
 if(obj_player.jPress)
 {
+	obj_player.forceWait = true;
+	var xd = abs(atx - obj_player.x);
+	var yd = abs(aty - obj_player.y);
+	xAngle = xd/abs(xd + yd);
+	yAngle = yd/abs(xd + yd);
+	if(obj_player.y > aty){yjuster = -1;}else{yjuster = 1;}
+	goingUp = true;
 	/*obj_player.forceWait = true;
 	obj_player.fuel -= pullFuelLoss;
 	if(snag == 0)
@@ -85,12 +100,4 @@ if(obj_player.jPress)
 		obj_player.phy_position_x += (momentum / 2) * negCos;
 		obj_player.phy_position_y -= (momentum / 2) * negSin;
 	}*/
-	//show_debug_message(obj_player.forceWait)
-	obj_player.forceWait = true;
-	var xd = abs(atx - obj_player.x);
-	var yd = abs(aty - obj_player.y);
-	var xAngle = xd/abs(xd + yd);
-	var yAngle = yd/abs(xd + yd);
-	obj_player.phy_speed_x = 10 * xAngle;
-	obj_player.phy_speed_y = 10 * -yAngle;
 }

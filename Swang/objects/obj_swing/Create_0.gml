@@ -11,3 +11,9 @@ obj_player.whereInSwing = 2;
 
 swingFuelGain = 1;
 pullFuelLoss = 0.25;
+
+goingUp = false;
+
+xAngle = 0;
+yAngle = 0;
+yjuster = 0;
