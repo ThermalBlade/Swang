@@ -5,6 +5,18 @@ yCon = obj_player.y + 2;
 
 rope = sqrt(2 * sqr(length))
 inst = instance_nearest(atx, aty, obj_hookTracker);
+
+if(inst != "noone" and instance_exists(inst)){
+	var pd = abs(point_distance(x, y, inst.x, inst.y));
+	var r = abs(ceil(point_distance(xCon, yCon, x, y)));
+	if(pd < closeSnap + r){
+		canSnap = true;
+	}
+	else{
+		canSnap = false;
+	}
+}
+
 if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 {
 	extentions += 1;
@@ -14,9 +26,12 @@ if(!obj_player.shPress or length < minimumLine) //Draw Line Until Space Pressed
 	aty = y - length
 	som  = rope
 	it = 0
-	if(!place_meeting(atx, aty, obj_hookable) and inst != "noone" and instance_exists(inst))
+	if(!place_meeting(atx, aty, obj_hookable) and inst != "noone" and instance_exists(inst) and canSnap)
 	{
 		inst.image_alpha = 1;
+	}
+	else if(inst != "noone" and instance_exists(inst)){
+		inst.image_alpha = 0;
 	}
 	xdiff = x - atx
 	ydiff = y - aty

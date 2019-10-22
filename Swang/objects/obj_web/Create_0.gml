@@ -14,3 +14,5 @@ atx = obj_player.x
 aty = obj_player.y
 
 obj_player.whereInSwing = 2;
+
+canSnap = false;
