@@ -3,7 +3,7 @@
 xHolder = 80;
 roadWidth = 500;
 blockWidth = 2500;
-blockRangeLow = 1;
-blockRangeHigh = 1;
+blockRangeLow = 3;
+blockRangeHigh = 5;
 
 event_user(0);

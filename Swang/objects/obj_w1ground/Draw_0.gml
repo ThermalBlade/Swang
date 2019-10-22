@@ -163,6 +163,7 @@ if(started){
 	started = false;
 }
 
+x = xStart - 128;
 while(x < ds_list_find_value(blocks, 1)){
 	draw_self();
 	x += 16;

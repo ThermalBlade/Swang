@@ -73,7 +73,7 @@ else
 
 if(obj_player.jPress)
 {
-	obj_player.forceWait = true;
+	/*obj_player.forceWait = true;
 	obj_player.fuel -= pullFuelLoss;
 	if(snag == 0)
 	{
@@ -84,5 +84,13 @@ if(obj_player.jPress)
 		rope -= 2;
 		obj_player.phy_position_x += (momentum / 2) * negCos;
 		obj_player.phy_position_y -= (momentum / 2) * negSin;
-	}
+	}*/
+	//show_debug_message(obj_player.forceWait)
+	obj_player.forceWait = true;
+	var xd = abs(atx - obj_player.x);
+	var yd = abs(aty - obj_player.y);
+	var xAngle = xd/abs(xd + yd);
+	var yAngle = yd/abs(xd + yd);
+	obj_player.phy_speed_x = 10 * xAngle;
+	obj_player.phy_speed_y = 10 * -yAngle;
 }

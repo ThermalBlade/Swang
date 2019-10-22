@@ -1,5 +1,7 @@
 /// @description Make the player fall
 // You can write your code in this editor
+
+
 boosting = false;
 
 momentum = sqrt(sqr(obj_player.phy_speed_x) + sqr(obj_player.phy_speed_y))
@@ -171,6 +173,7 @@ else
 	firstPress = false;
 }
 
+show_debug_message(forceWait);
 if(forceWait == true and !jPress) //Force new click for jump/boost
 {
 	forceWait = false;
