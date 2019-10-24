@@ -82,7 +82,7 @@ if(obj_player.jPress)
 	}
 	else
 	{
-		rope -= 5;
+		rope -= 10;
 		obj_player.phy_position_x += (momentum / 1.5) * negCos;
 		obj_player.phy_position_y -= (momentum / 1.5) * negSin;
 	}
