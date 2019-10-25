@@ -6,14 +6,9 @@
     "children": [
         "3a9d4221-659a-4292-b97f-30eca2a6259e",
         "cc815df6-dea5-429d-b342-dade19e9ffe5",
-        "062881b9-f0cf-45a8-b8ea-56f318546309",
-        "99a8599a-2eab-4b61-9a42-272ff867a04a",
-        "d35465ca-98ff-4f93-b234-832e067f0c52",
-        "d51e525c-f709-4aee-8f70-0cf42ce384b2",
-        "7cab6a2f-b551-467a-b1fe-083f2015a868",
-        "02cc5c80-ece1-4846-9632-7fc6c92b7383",
-        "87963417-7448-41b6-9eb8-e1badce8039a",
-        "a00ec8db-1af0-4c12-836e-46b7a63014a5"
+        "deb547b8-89ec-4e1d-80ee-c66c3fbddedc",
+        "1a44e62b-7a85-403c-b1ba-6395f7bca6be",
+        "062881b9-f0cf-45a8-b8ea-56f318546309"
     ],
     "filterType": "GMSprite",
     "folderName": "Buildings",
