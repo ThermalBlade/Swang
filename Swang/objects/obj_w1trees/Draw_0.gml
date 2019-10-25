@@ -10,6 +10,7 @@ randomize();
 
 for(i = 0; i < ds_list_size(lampXs); i ++){
 	x = ds_list_find_value(lampXs, i);
+	image_index = 0;
 	sprite_index = spr_lamp;
 	draw_self();
 }
